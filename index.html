@@ -1,0 +1,2646 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Developer Connection Inventory — Reynaldo Gonzalez, Malibu Bay Realty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy: rgb(18,38,84);
+  --navy-deep: rgb(11,24,54);
+  --red: rgb(190,30,38);
+  --gold: rgb(224,186,66);
+  --wa: #1faa55;
+  --bg: #eef1f6;
+  --surface: #ffffff;
+  --surface-2: #f6f8fb;
+  --ink: #16233f;
+  --ink-soft: #4a5872;
+  --line: #d8dfe9;
+  --shadow: 0 10px 30px rgba(18,38,84,.10);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0a1122;
+    --surface: #131f3d;
+    --surface-2: #0f1930;
+    --ink: #eef2fb;
+    --ink-soft: #a9b6d2;
+    --line: #2a3a5f;
+    --shadow: 0 10px 30px rgba(0,0,0,.45);
+    color-scheme: dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Public Sans", system-ui, -apple-system, sans-serif;
+  font-size:16px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.brand-name,.price{font-family:"Archivo", "Public Sans", sans-serif}
+img{display:block; max-width:100%}
+a{text-decoration:none}
+.wrap{max-width:1240px; margin:0 auto; padding:0 20px}
+
+/* ---------- Header ---------- */
+header.site{
+  background:var(--navy); color:#fff;
+  position:sticky; top:0; z-index:50;
+  border-bottom:4px solid var(--gold);
+}
+.header-in{display:flex; align-items:center; gap:18px; padding:14px 0; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:14px; margin-right:auto}
+.brand-mark{
+  width:46px; height:46px; flex:0 0 46px; border-radius:8px;
+  background:var(--red); color:#fff; display:grid; place-items:center;
+  font-family:"Archivo",sans-serif; font-weight:900; font-size:19px; letter-spacing:.02em;
+  border:2px solid var(--gold);
+}
+.brand-name{font-weight:800; font-size:19px; letter-spacing:.06em; line-height:1.1; text-transform:uppercase}
+.brand-sub{font-size:12.5px; color:var(--gold); font-weight:600; letter-spacing:.14em; text-transform:uppercase}
+nav.main{display:flex; gap:6px; flex-wrap:wrap}
+nav.main a{
+  color:#dfe7f7; font-weight:600; font-size:14.5px; padding:8px 14px; border-radius:999px;
+}
+nav.main a:hover{background:rgba(255,255,255,.12); color:#fff}
+.header-call{
+  background:var(--gold); color:var(--navy-deep); font-weight:800; font-size:14.5px;
+  padding:10px 18px; border-radius:8px; white-space:nowrap;
+}
+.header-call:hover{background:#f0cd6a}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--navy-deep); color:#fff; padding:52px 0 46px; position:relative; overflow:hidden}
+.hero::after{
+  content:""; position:absolute; right:-120px; top:-120px; width:420px; height:420px;
+  border:60px solid rgba(224,186,66,.10); border-radius:50%;
+}
+.hero h1{font-size:clamp(32px,5vw,52px); font-weight:900; line-height:1.05; margin:0 0 14px; max-width:800px}
+.hero h1 .gold{color:var(--gold)}
+.hero p{max-width:640px; color:#c6d2ea; font-size:17px; margin:0 0 26px}
+.hero-stats{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:30px; position:relative; z-index:1}
+.stat{
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16);
+  border-radius:10px; padding:12px 20px;
+}
+.stat b{display:block; font-family:"Archivo",sans-serif; font-size:26px; font-weight:800; color:#fff; line-height:1}
+.stat span{font-size:13px; color:var(--gold); font-weight:700; letter-spacing:.1em; text-transform:uppercase}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-weight:700; font-size:15px; padding:13px 22px; border-radius:8px; color:#fff;
+  transition:transform .15s ease, filter .15s ease;
+}
+.btn:hover{filter:brightness(1.1)}
+.btn:active{transform:scale(.98)}
+.btn-text{background:var(--red)}
+.btn-call{background:var(--navy); border:1px solid rgba(255,255,255,.35)}
+.hero .btn-call{background:rgba(255,255,255,.1)}
+.btn-wa{background:var(--wa)}
+
+/* ---------- Toolbar ---------- */
+.toolbar{
+  position:sticky; top:79px; z-index:40; background:var(--bg);
+  padding:18px 0 6px;
+}
+.toolbar-in{
+  display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+  background:var(--surface); border:1px solid var(--line); border-radius:12px;
+  padding:12px; box-shadow:var(--shadow);
+}
+.tabs{display:flex; gap:6px; flex-wrap:wrap}
+.tab{
+  border:1px solid var(--line); background:var(--surface-2); color:var(--ink);
+  font:inherit; font-weight:700; font-size:14.5px; padding:9px 16px; border-radius:999px; cursor:pointer;
+}
+.tab[aria-pressed="true"]{background:var(--navy); color:#fff; border-color:var(--navy)}
+.tab .n{color:var(--gold); font-weight:800}
+.search{flex:1 1 220px}
+.search input, .sortsel{
+  width:100%; font:inherit; font-size:15px; padding:10px 14px; border-radius:8px;
+  border:1px solid var(--line); background:var(--surface-2); color:var(--ink);
+}
+.sortwrap{flex:0 1 210px}
+.result-line{font-size:14px; color:var(--ink-soft); margin:12px 4px 0}
+
+/* ---------- Sections ---------- */
+section.block{padding:34px 0 10px}
+.section-head{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:6px}
+.section-head h2{font-size:clamp(24px,3.4vw,34px); font-weight:900; margin:0; color:var(--ink)}
+.section-head .count{
+  background:var(--red); color:#fff; font-weight:800; font-size:14px;
+  padding:4px 12px; border-radius:999px;
+}
+.section-sub{color:var(--ink-soft); margin:0 0 22px; max-width:720px}
+.grid{
+  display:grid; gap:22px;
+  grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));
+}
+.card{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
+}
+.card-photo{position:relative; aspect-ratio:4/3; background:var(--surface-2)}
+.card-photo img{width:100%; height:100%; object-fit:cover}
+.badge{
+  position:absolute; left:12px; top:12px; background:var(--navy); color:#fff;
+  font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  padding:5px 11px; border-radius:999px; border:1px solid rgba(255,255,255,.35);
+}
+.card-body{padding:18px; display:flex; flex-direction:column; gap:6px; flex:1}
+.price{font-size:27px; font-weight:900; color:var(--navy); line-height:1.05}
+@media (prefers-color-scheme: dark){ .price{color:var(--gold)} }
+.addr{font-size:16.5px; font-weight:700; margin:0; line-height:1.3}
+.specs{margin:2px 0 0; font-size:14.5px; color:var(--ink); font-weight:600}
+.meta{margin:0; font-size:14px; color:var(--ink-soft)}
+.mls{margin:0; font-size:12.5px; color:var(--ink-soft); letter-spacing:.04em}
+.details-link{
+  color:var(--red); font-weight:700; font-size:14.5px; margin-top:4px; display:inline-block;
+}
+.details-link:hover{text-decoration:underline}
+/* ---------- Listing details (expandable) ---------- */
+.more{margin-top:8px; border-top:1px solid var(--line); padding-top:10px}
+.more summary{
+  color:var(--red); font-weight:700; font-size:14.5px; cursor:pointer; list-style:none;
+  display:flex; align-items:center; gap:6px;
+}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+"; font-weight:800; margin-left:auto; font-size:18px; line-height:1; color:var(--ink-soft)}
+.more[open ] summary::after{content:"\2013"}
+.more-body{padding-top:10px; display:flex; flex-direction:column; gap:10px}
+.more-dom{
+  margin:0; font-size:13.5px; font-weight:700; color:var(--navy);
+  background:var(--surface-2); border:1px solid var(--line); border-radius:8px; padding:8px 11px;
+}
+@media (prefers-color-scheme: dark){ .more-dom{color:var(--gold)} }
+.more-desc{margin:0; font-size:14.5px}
+.more-high{margin:0; font-size:13.5px; color:var(--ink-soft)}
+.more-body h4{margin:2px 0 0; font-size:13.5px; font-weight:800; color:var(--ink)}
+.more-facts{list-style:none; margin:0; padding:0}
+.more-facts li{
+  display:grid; grid-template-columns:118px 1fr; gap:10px; padding:5px 0;
+  border-bottom:1px dashed var(--line); font-size:13.5px;
+}
+.more-facts li:last-child{border-bottom:none}
+.more-facts span{color:var(--ink-soft); font-weight:600}
+.more-facts b{font-weight:600}
+.more-hist{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; font-size:13.5px}
+.more-hist .hdate{font-weight:700; display:inline-block; min-width:96px}
+.more-src{margin:0; font-size:12px; color:var(--ink-soft)}
+
+.card-actions{display:grid; grid-template-columns:1.35fr 1fr 1.15fr; gap:8px; margin-top:auto; padding-top:14px}
+.card-actions .btn{padding:11px 6px; font-size:14px; border-radius:8px}
+.card-actions .btn-call{background:var(--navy); border:none}
+.no-results{
+  display:none; background:var(--surface); border:1px dashed var(--line); border-radius:12px;
+  padding:28px; text-align:center; color:var(--ink-soft); font-weight:600;
+}
+
+/* ---------- Featured ---------- */
+.featured{background:var(--navy-deep); color:#fff; margin-top:48px; padding:54px 0 64px}
+.featured .section-head h2{color:#fff}
+.featured .section-sub{color:#b9c7e4}
+.featured .count{background:var(--gold); color:var(--navy-deep)}
+.fcard{
+  background:var(--surface); color:var(--ink); border-radius:16px; overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,.35); margin-bottom:30px;
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+}
+.fmedia{padding:0; display:flex; flex-direction:column; min-width:0}
+.fmain{aspect-ratio:16/10; background:#0c1730; overflow:hidden}
+.fmain img{width:100%; height:100%; object-fit:cover}
+.thumbs{display:flex; min-width:0; max-width:100%; gap:8px; padding:10px; overflow-x:auto; background:var(--surface-2)}
+.thumb{
+  border:2px solid transparent; border-radius:8px; padding:0; cursor:pointer; flex:0 0 auto;
+  background:none; width:86px; height:60px; overflow:hidden;
+}
+.thumb img{width:100%; height:100%; object-fit:cover}
+.thumb.active{border-color:var(--gold)}
+.fbody{padding:28px; min-width:0; display:flex; flex-direction:column; gap:10px}
+.fkicker{
+  font-size:12.5px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--red);
+}
+.fbody h3{font-size:clamp(24px,3vw,32px); font-weight:900; margin:0; line-height:1.1}
+.fprice{font-family:"Archivo",sans-serif; font-size:30px; font-weight:900; color:var(--navy)}
+@media (prefers-color-scheme: dark){ .fprice{color:var(--gold)} }
+.offmarket{
+  display:inline-block; align-self:flex-start; background:var(--red); color:#fff; font-weight:800;
+  font-size:15px; padding:8px 16px; border-radius:8px; letter-spacing:.02em;
+}
+.flabels{display:flex; gap:8px; flex-wrap:wrap}
+.flabels .offmarket{align-self:auto}
+.presale{
+  display:inline-block; background:var(--navy); color:#fff; font-weight:800;
+  font-size:15px; padding:8px 16px; border-radius:8px; letter-spacing:.02em;
+}
+.faddr{font-size:16px; font-weight:600; margin:0}
+.fdesc{color:var(--ink-soft); margin:0}
+.speclist{list-style:none; margin:8px 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:8px 18px}
+.speclist li{
+  font-size:14.5px; font-weight:600; padding-left:16px; position:relative;
+}
+.speclist li::before{content:""; position:absolute; left:0; top:8px; width:7px; height:7px; background:var(--gold); border-radius:2px}
+.fbody .card-actions{padding-top:18px}
+
+/* ---------- About ---------- */
+.about{padding:54px 0 62px}
+.about-simple{
+  max-width:880px;
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:32px 36px; box-shadow:var(--shadow);
+}
+.about-contact .about-role{
+  color:var(--red); font-weight:700; font-size:13px; letter-spacing:.1em;
+  text-transform:uppercase; margin:0 0 6px;
+}
+.about-contact h3{font-size:24px; font-weight:900; margin:0 0 6px; line-height:1.15}
+.about-contact .about-phone{margin:0; font-size:18px; font-weight:700}
+.about-contact .about-phone a{color:var(--ink); white-space:nowrap}
+.about-contact .about-phone a:hover{color:var(--red); text-decoration:underline}
+.about-contact-bottom{
+  margin-top:28px; padding-top:22px; border-top:1px solid var(--line);
+}
+.about-contact-bottom p{margin:0 0 6px; color:var(--ink); font-size:16.5px; font-weight:600}
+.about-contact-bottom p:last-child{margin-bottom:0}
+.about-contact-bottom a{color:var(--ink); font-weight:700; white-space:nowrap}
+.about-contact-bottom a:hover{color:var(--red); text-decoration:underline}
+@media (max-width: 560px){ .about-simple{padding:26px 22px} }
+
+/* ---------- Profile (About) ---------- */
+.profile-row{display:flex; gap:28px; align-items:flex-start}
+.profile-block{margin:0; flex:0 0 200px; text-align:center}
+.profile-photo{
+  width:200px; height:200px; object-fit:cover; border-radius:14px;
+  border:3px solid var(--gold); box-shadow:var(--shadow);
+}
+.profile-caption{
+  margin-top:12px; font-family:"Archivo",sans-serif; font-weight:800;
+  font-size:15.5px; line-height:1.35; color:var(--ink);
+}
+.profile-row .about-contact{flex:1; min-width:0; padding-top:6px}
+.about-insta{margin:14px 0 0}
+.insta-link{
+  display:inline-flex; align-items:center; gap:9px;
+  background:var(--navy); color:#fff; font-weight:700; font-size:15px;
+  padding:10px 18px; border-radius:8px;
+}
+.insta-link:hover{background:var(--red); color:#fff}
+.insta-link svg{width:19px; height:19px; flex:0 0 19px}
+@media (max-width: 560px){
+  .profile-row{flex-direction:column; align-items:center; text-align:center}
+  .profile-row .about-contact{text-align:center}
+  .profile-photo{width:180px; height:180px}
+}
+
+/* ---------- Footer ---------- */
+footer.site{background:var(--navy); color:#c6d2ea; padding:44px 0 36px; border-top:4px solid var(--red)}
+.footer-in{display:flex; gap:28px; flex-wrap:wrap; align-items:flex-start; justify-content:space-between}
+footer.site .fname{font-family:"Archivo",sans-serif; font-size:22px; font-weight:900; color:#fff}
+footer.site p{margin:4px 0; font-size:14.5px}
+footer.site a{color:var(--gold); font-weight:700}
+.footer-actions{display:flex; gap:10px; flex-wrap:wrap}
+.footer-note{margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.15); font-size:13px; color:#8fa2c6}
+
+@media (max-width: 900px){
+  .fcard{grid-template-columns:1fr}
+  .toolbar{top:0; position:static}
+}
+@media (max-width: 560px){
+  .header-in{gap:10px}
+  nav.main{order:3; width:100%}
+  .grid{grid-template-columns:1fr}
+  .card-actions{grid-template-columns:1.35fr 1fr 1.15fr}
+  .speclist{grid-template-columns:1fr}
+  .hero{padding:38px 0 34px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-in">
+    <div class="brand">
+      <div class="brand-mark">DC</div>
+      <div>
+        <div class="brand-name">The Developer Connection</div>
+        <div class="brand-sub">Malibu Bay Realty</div>
+      </div>
+    </div>
+    <nav class="main" aria-label="Sections">
+      <a href="#for-sale">For Sale</a>
+      <a href="#for-rent">For Rent</a>
+      <a href="#featured">Featured</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="header-call" href="tel:+13054399410">Call 305-439-9410</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Developer Connection <span class="gold">Inventory</span></h1>
+    <p>Every active listing from Reynaldo Gonzalez, Sales Director at Malibu Bay Realty — new construction and developer inventory across Miami, Homestead, Florida City, and Cutler Bay. Interested in one? Text, call, or WhatsApp Reynaldo directly.</p>
+    <div class="hero-stats">
+      <div class="stat"><b>27</b><span>For Sale</span></div>
+      <div class="stat"><b>9</b><span>For Rent</span></div>
+      <div class="stat"><b>10</b><span>Featured / Off-Market</span></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+      <a class="btn btn-call" href="tel:+13054399410">Call 305-439-9410</a>
+      <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="toolbar">
+    <div class="toolbar-in">
+      <div class="tabs" role="group" aria-label="Filter listings">
+        <button type="button" class="tab" data-filter="all" aria-pressed="true">All <span class="n">36</span></button>
+        <button type="button" class="tab" data-filter="sale" aria-pressed="false">For Sale <span class="n">27</span></button>
+        <button type="button" class="tab" data-filter="rent" aria-pressed="false">For Rent <span class="n">9</span></button>
+      </div>
+      <div class="search">
+        <input type="search" id="q" placeholder="Search address, community, or city&hellip;" aria-label="Search listings">
+      </div>
+      <div class="sortwrap">
+        <select class="sortsel" id="sort" aria-label="Sort listings">
+          <option value="asc" selected>Sort: Price Low to High</option>
+          <option value="desc">Price: High to Low</option>
+          <option value="default">As listed</option>
+        </select>
+      </div>
+    </div>
+    <p class="result-line" id="resultLine">Showing all 36 MLS listings</p>
+  </div>
+
+  <section class="block" id="for-sale">
+    <div class="section-head">
+      <h2>For Sale</h2>
+      <span class="count">27 listings</span>
+    </div>
+    <p class="section-sub">Active MLS listings — sorted by price, lowest to highest. New construction and developer inventory represented by Reynaldo Gonzalez, Malibu Bay Realty.</p>
+    <div class="grid" id="gridSale">
+<article class="card" data-kind="sale" data-price="380990" data-search="34507 sw 191st ave, homestead, fl 33034 century park square townhouse">
+      <div class="card-photo">
+        <img src="img-ae829246eb.jpg" alt="34507 SW 191st Ave, Homestead, FL 33034" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$380,990</div>
+        <h3 class="addr">34507 SW 191st Ave, Homestead, FL 33034</h3>
+        <p class="specs">3 bd &middot; 2 full, 1 half ba &middot; 1,558 SF living &middot; Built 2025</p>
+        <p class="meta">Century Park Square &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12098001</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 30, 2026 &middot; 41 days on market</p>
+            <p class="more-desc">New construction, ready to close, FHA approved, 3 bedrooms, 2.5 bathrooms, with one car garage, all tiled on 1st floor, laminated floors upstairs. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage; laminated floors upstairs</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,100</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Dryer, Electric Range, Electric Water Heater, Microwave, Refrigerator, Washer</b></li>
+              <li><span>Builder model</span><b>Perugia B</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA amenities</span><b>Exterior Lighting</b></li>
+              <li><span>HOA fee</span><b>$135/mo</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall, Closet Cabinetry, Kitchen Island, Entrance Foyer, Pantry</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3078260131490</b></li>
+              <li><span>Parking</span><b>1 attached garage space</b></li>
+              <li><span>Price per SF</span><b>$245</b></li>
+              <li><span>Total structure area</span><b>1,816 SF</b></li>
+              <li><span>View</span><b>Club Area View</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 30, 2026</span>Listed for sale &middot; $380,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="380990" data-search="34508 sw 191st ave, homestead, fl 33034 century park square townhouse">
+      <div class="card-photo">
+        <img src="img-f8e0a94e14.jpg" alt="34508 SW 191st Ave, Homestead, FL 33034" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$380,990</div>
+        <h3 class="addr">34508 SW 191st Ave, Homestead, FL 33034</h3>
+        <p class="specs">3 bd &middot; 2 full, 1 half ba &middot; 1,558 SF living &middot; Built 2025</p>
+        <p class="meta">Century Park Square &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12097989</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 30, 2026 &middot; 41 days on market</p>
+            <p class="more-desc">New construction, 200 townhouses, ready to close, FHA approved, 3 bedrooms, 2.5 bathrooms with one car garage. Seller will help with closing costs with the preferred lender. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,100</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Dryer, Electric Range, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>B Perugia</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Fencing</span><b>Fenced</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA amenities</span><b>Exterior Lighting</b></li>
+              <li><span>HOA fee</span><b>$135/mo</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, FHA, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3078260131640</b></li>
+              <li><span>Parking</span><b>1 attached garage space; patio</b></li>
+              <li><span>Price per SF</span><b>$245</b></li>
+              <li><span>Total structure area</span><b>1,816 SF</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 30, 2026</span>Listed for sale &middot; $380,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="389990" data-search="18993 sw 344th ter, homestead, fl 33032 century park square townhouse">
+      <div class="card-photo">
+        <img src="img-7b99a51605.jpg" alt="18993 SW 344th Ter, Homestead, FL 33032" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$389,990</div>
+        <h3 class="addr">18993 SW 344th Ter, Homestead, FL 33032</h3>
+        <p class="specs">3 bd &middot; 2 full, 1 half ba &middot; 1,558 SF living &middot; Built 2025</p>
+        <p class="meta">Century Park Square &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12063157</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Jul 31, 2026 &middot; 102 days on market</p>
+            <p class="more-desc">New construction, 2-story townhouses, 3 and 4 bedrooms available with one car garage, FHA approved and ready to close. Seller will help with closing costs with the preferred lender. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,024</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Electric Range, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>B Perugia</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>HOA amenities</span><b>Other</b></li>
+              <li><span>HOA fee</span><b>$135/mo</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall, Closet Cabinetry, Kitchen Island</b></li>
+              <li><span>Listing terms</span><b>Conventional, FHA, VA Loan</b></li>
+              <li><span>Parcel #</span><b>3078260131140</b></li>
+              <li><span>Parking</span><b>1 attached garage space</b></li>
+              <li><span>Price per SF</span><b>$250</b></li>
+              <li><span>Tax assessed value</span><b>$26,180</b></li>
+              <li><span>Total structure area</span><b>1,816 SF</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Jul 31, 2026</span>Listed for sale &middot; $389,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="395990" data-search="19041 sw 344th ter, homestead, fl 33034 century park square townhouse">
+      <div class="card-photo">
+        <img src="img-b2ff3e3f84.jpg" alt="19041 SW 344th Ter, Homestead, FL 33034" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$395,990</div>
+        <h3 class="addr">19041 SW 344th Ter, Homestead, FL 33034</h3>
+        <p class="specs">4 bd &middot; 2 full, 1 half ba &middot; 1,666 SF living &middot; Built 2025</p>
+        <p class="meta">Century Park Square &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12000527</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Apr 14, 2026 &middot; 210 days on market</p>
+            <p class="more-desc">New community — 3 and 4 bedrooms available with one car garage. FHA approved and ready to close. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,450</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Electric Range, Refrigerator</b></li>
+              <li><span>Builder model</span><b>C Capri</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile, Wood</b></li>
+              <li><span>HOA amenities</span><b>Exterior Lighting, Other</b></li>
+              <li><span>HOA fee</span><b>$187/mo</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3078260131280</b></li>
+              <li><span>Parking</span><b>1 garage space</b></li>
+              <li><span>Price per SF</span><b>$238</b></li>
+              <li><span>Tax assessed value</span><b>$26,180</b></li>
+              <li><span>Total structure area</span><b>1,924 SF</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Apr 14, 2026</span>Listed for sale &middot; $395,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="520990" data-search="2938 nw 27th st unit 2938, miami, fl 33142 garvey gardens townhouse">
+      <div class="card-photo">
+        <img src="img-c591a61c92.jpg" alt="2938 NW 27th St Unit 2938, Miami, FL 33142" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$520,990</div>
+        <h3 class="addr">2938 NW 27th St Unit 2938, Miami, FL 33142</h3>
+        <p class="specs">3 bd &middot; 2 full ba &middot; 1,083 SF living &middot; Built 2025</p>
+        <p class="meta">Garvey Gardens &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12049989</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Jul 8, 2026 &middot; 125 days on market</p>
+            <p class="more-desc">New construction in a very central area, close to the Miami airport, downtown and more. 3 bedrooms and 2 bathrooms, FHA approved and ready to close, paying up to 6% toward buyers closing costs with the preferred lender. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,025</b></li>
+              <li><span>Appliances</span><b>Disposal, Electric Range, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>HOA</span><b>Yes — amenities: None</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, 1031 Exchange, FHA</b></li>
+              <li><span>Parcel #</span><b>3031280390020</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>Price per SF</span><b>$481</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Oct 13, 2026</span>Price change &middot; $520,990 (−5.4%)</li>
+              <li><span class="hdate">Sep 16, 2026</span>Price change &middot; $550,990 (−7.4%)</li>
+              <li><span class="hdate">Jul 8, 2026</span>Price change &middot; $594,990 (−4.8%)</li>
+              <li><span class="hdate">Jun 6, 2026</span>Listed for sale &middot; $625,000</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="520990" data-search="2936 nw 27th st unit 2936, miami, fl 33142 garvey gardens townhouse">
+      <div class="card-photo">
+        <img src="img-c130488c47.jpg" alt="2936 NW 27th St Unit 2936, Miami, FL 33142" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$520,990</div>
+        <h3 class="addr">2936 NW 27th St Unit 2936, Miami, FL 33142</h3>
+        <p class="specs">3 bd &middot; 2 full ba &middot; 1,083 SF living &middot; Built 2025</p>
+        <p class="meta">Garvey Gardens &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12049971</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Jul 8, 2026 &middot; 125 days on market</p>
+            <p class="more-desc">Beautiful new construction in the heart of Miami — 3 bedrooms and 2 bathrooms, FHA approved, paying up to 6% towards buyers closing costs with the preferred lender. Ready to close and easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,025</b></li>
+              <li><span>Appliances</span><b>Disposal, Electric Range, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Flood zone</span><b>FEMA Zone AE (high-risk Special Flood Hazard Area)</b></li>
+              <li><span>HOA</span><b>Yes — amenities: None</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3031280390010</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>Price per SF</span><b>$481</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Oct 13, 2026</span>Price change &middot; $520,990 (−5.4%)</li>
+              <li><span class="hdate">Sep 16, 2026</span>Price change &middot; $550,990 (−7.4%)</li>
+              <li><span class="hdate">Jul 8, 2026</span>Price change &middot; $594,990 (−4.8%)</li>
+              <li><span class="hdate">Jun 6, 2026</span>Listed for sale &middot; $625,000</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="584990" data-search="27350 sw 133rd path, miami, fl 33170 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-e1ad855605.jpg" alt="27350 SW 133rd Path, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$584,990</div>
+        <h3 class="addr">27350 SW 133rd Path, Miami, FL 33170</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; Built 2025</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12061194</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Jul 29, 2026 &middot; 104 days on market</p>
+            <p class="more-desc">New construction in a very central area, 4 bedrooms with 3 bathrooms, ready to close. Some closing costs available with the preferred lender. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$675</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Range, Electric Water Heater, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Apollo</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3069350350060</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 12, 2026</span>Price change &middot; $584,990 (+1.7%)</li>
+              <li><span class="hdate">Jul 29, 2026</span>Listed for sale &middot; $574,990</li>
+              <li><span class="hdate">Jul 28, 2026</span>Listing removed &middot; $574,990</li>
+              <li><span class="hdate">May 26, 2026</span>Price change &middot; $574,990 (+0.9%)</li>
+              <li><span class="hdate">Apr 18, 2026</span>Price change &middot; $569,990 (+0.9%)</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="596990" data-search="27318 sw 133 path, homestead, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-7d718d64cf.jpg" alt="27318 SW 133 Path, Homestead, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$596,990</div>
+        <h3 class="addr">27318 SW 133 Path, Homestead, FL 33032</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Built 2025</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12093602</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">New construction in a very central area, 4 and 5 bedrooms available. No association or CDD tax. 4 bedrooms and 3.5 bathrooms (in-law quarter model). FHA approved. Easy to show. Seller will help with closing costs with the preferred lender.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$610</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Apollo 2.0</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Fencing</span><b>Fenced</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for sale &middot; $596,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="596990" data-search="13349 sw 272nd ln, homestead, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-d83430f33c.jpg" alt="13349 SW 272nd Ln, Homestead, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$596,990</div>
+        <h3 class="addr">13349 SW 272nd Ln, Homestead, FL 33032</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; Built 2025</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12083585</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 4, 2026 &middot; 67 days on market</p>
+            <p class="more-desc">No association. New construction in a very convenient location, 4 bedrooms and 3 bathrooms (in-law quarter model). All tiled on 1st floor, laminated floors upstairs, nice kitchen and bathrooms, impact doors and windows. Patio for entertaining.</p>
+            <p class="more-high"><b>Highlights:</b> Laminated floors upstairs; impact doors and windows; patio for entertaining; nice kitchen</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$610</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Range, Electric Water Heater, Microwave, Refrigerator, Solar Hot Water</b></li>
+              <li><span>Builder model</span><b>Apollo 2.0</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>HOA</span><b>None</b></li>
+              <li><span>Interior features</span><b>Interior Hall, Closet Cabinetry, Entrance Foyer, Pantry</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3069350350180</b></li>
+              <li><span>Parking</span><b>2 carport spaces; patio</b></li>
+              <li><span>Rooms</span><b>Attic</b></li>
+              <li><span>Tax assessed value</span><b>$36,011</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 19, 2026</span>Listed for sale &middot; $596,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="601990" data-search="27303 sw 133 path, homestead, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-d21e13646e.jpg" alt="27303 SW 133 Path, Homestead, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$601,990</div>
+        <h3 class="addr">27303 SW 133 Path, Homestead, FL 33032</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Built 2025</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12094398</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 23, 2026 &middot; 48 days on market</p>
+            <p class="more-desc">New construction in a very central area, no association, 4 bedrooms, 3.5 bathrooms (in-law quarter model). Seller will help with closing costs with the preferred lender. Easy to show. Estimated closing date by March 2027.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$610</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Apollo 2.0</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Fencing</span><b>Fenced</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 23, 2026</span>Listed for sale &middot; $601,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="606990" data-search="27286 sw 133 path, homestead, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-2cfe5689a1.jpg" alt="27286 SW 133 Path, Homestead, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$606,990</div>
+        <h3 class="addr">27286 SW 133 Path, Homestead, FL 33032</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Built 2025</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12093528</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">New construction, 4 and 5 bedrooms available with no association or CDD. 4 bedrooms and 3.5 bathrooms with anexo. Nice kitchen and bathrooms, all tiled on 1st floor, laminated floors upstairs. FHA approved. Some closing costs available with the preferred lender. Estimated closing date by March 2027. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> Laminated floors upstairs; nice kitchen</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$610</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Apollo 2.0</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Fencing</span><b>Fenced</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for sale &middot; $606,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="609990" data-search="13347 sw 272nd ln, homestead, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-7647969842.jpg" alt="13347 SW 272nd Ln, Homestead, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$609,990</div>
+        <h3 class="addr">13347 SW 272nd Ln, Homestead, FL 33032</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Built 2025</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12083616</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 4, 2026 &middot; 67 days on market</p>
+            <p class="more-desc">No association or CDD tax. New construction in a very central area, 4 bedrooms, 3.5 bathrooms (in-law quarter model). All tiled on 1st floor, laminated floor upstairs, impact windows and doors. Patio for entertaining. Estimated closing date by February 2027. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> Laminated floor upstairs; impact windows and doors; patio for entertaining</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$610</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Apollo 2.0</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Fencing</span><b>Fenced</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Parking</span><b>2 or more spaces; patio</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 19, 2026</span>Listed for sale &middot; $609,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="621990" data-search="27270 sw 133rd path, miami, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-6d88152f41.jpg" alt="27270 SW 133rd Path, Miami, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$621,990</div>
+        <h3 class="addr">27270 SW 133rd Path, Miami, FL 33032</h3>
+        <p class="specs">5 bd &middot; 3 full ba &middot; Built 2026</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12092243</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">48 days on market</p>
+            <p class="more-desc">New construction in a very convenient location, no association or CDD, 5 bedrooms and 3 bathrooms with one car garage. In-law quarter model. All tiled on 1st floor, laminate flooring upstairs. Estimated closing date by March 2027. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage; laminate flooring upstairs</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>5</b></li>
+              <li><span>Bathrooms</span><b>3</b></li>
+              <li><span>Year built</span><b>2026</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Parking</span><b>1-car garage</b></li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="621990" data-search="27268 sw 133rd path, miami, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-c64ba331da.jpg" alt="27268 SW 133rd Path, Miami, FL 33032" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$621,990</div>
+        <h3 class="addr">27268 SW 133rd Path, Miami, FL 33032</h3>
+        <p class="specs">5 bd &middot; 3 full ba &middot; Built 2026</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12092238</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 19, 2026 &middot; 52 days on market</p>
+            <p class="more-desc">New construction in a very central area with no association or CDD, 4 and 5 bedrooms available. 5 bedrooms, 3 bathrooms (in-law quarter model) with one car garage. Estimated closing date by February 2027. Easy to show. All tiled on 1st floor, laminated floor upstairs. Big patio for entertaining.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage; laminated floor upstairs; big patio for entertaining</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$610</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Range, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Solaris</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Fencing</span><b>Fenced</b></li>
+              <li><span>Flooring</span><b>Carpet, Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Interior features</span><b>Interior Hall</b></li>
+              <li><span>Listing terms</span><b>All Cash, FHA, FHA-VA Approved</b></li>
+              <li><span>Parcel #</span><b>3069350350150</b></li>
+              <li><span>Parking</span><b>1 attached garage space</b></li>
+              <li><span>Tax assessed value</span><b>$36,011</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 19, 2026</span>Listed for sale &middot; $621,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="641990" data-search="13648 sw 272, miami, fl 33032 sunrise estates townhouse">
+      <div class="card-photo">
+        <img src="img-df9fd475f9.jpg" alt="13648 SW 272, Miami, FL 33032" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$641,990</div>
+        <h3 class="addr">13648 SW 272, Miami, FL 33032</h3>
+        <p class="specs">5 bd &middot; 3 full ba &middot; Built 2026</p>
+        <p class="meta">Sunrise Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12094354</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">48 days on market</p>
+            <p class="more-desc">New construction, 5 bedrooms, 3 bathrooms (in-law quarter model), all tiled on 1st floor, laminated floors upstairs. FHA approved. Seller will help with closing costs with the preferred lender. Easy to show.</p>
+            <p class="more-high"><b>Highlights:</b> Laminated floors upstairs</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>5</b></li>
+              <li><span>Bathrooms</span><b>3 full</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2026</b></li>
+              <li><span>Parking</span><b>1 attached garage space</b></li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="684990" data-search="11903 sw 231 lane, miami, fl 33170 silver parc single family">
+      <div class="card-photo">
+        <img src="img-3a8f6d3dcc.jpg" alt="11903 SW 231 lane, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$684,990</div>
+        <h3 class="addr">11903 SW 231 lane, Miami, FL 33170</h3>
+        <p class="specs">3 bd &middot; 2 full, 1 half ba &middot; Lot 5,092 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12006277</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Apr 22, 2026 &middot; 202 days on market</p>
+            <p class="more-desc">New community with no association or CDD, 3 and 4 bedrooms available. 3 bedrooms, 2.5 bathrooms, one-story single-family house with 1-car garage. Estimated closing date by 11/30/2026. Only floor plans available. Call for details.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,023</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Electric Range, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Antigua</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Carpet, Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA-VA Approved</b></li>
+              <li><span>Lot</span><b>5,092 SF</b></li>
+              <li><span>Parking</span><b>1 attached garage space; driveway</b></li>
+              <li><span>Roof</span><b>Metal</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Stories</span><b>1</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>5700</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">May 18, 2026</span>Price change &middot; $684,990 (+3.8%)</li>
+              <li><span class="hdate">Apr 22, 2026</span>Listed for sale &middot; $659,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="699990" data-search="23171 sw 119 ave, miami, fl 33170 silver parc single family">
+      <div class="card-photo">
+        <img src="img-389a828888.jpg" alt="23171 SW 119 Ave, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$699,990</div>
+        <h3 class="addr">23171 SW 119 Ave, Miami, FL 33170</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Lot 6,226 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12114870</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Oct 29, 2026 &middot; 12 days on market</p>
+            <p class="more-desc">New construction in a very central area with no association — 4 bedrooms, 3.5 bathrooms with one car garage. Some closing costs available with the preferred lender.</p>
+            <p class="more-high"><b>Highlights:</b> One car garage</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,023</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Electric Range, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Catalina</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Carpet, Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Lot</span><b>6,226 SF</b></li>
+              <li><span>Parking</span><b>1 attached garage space; driveway</b></li>
+              <li><span>Roof</span><b>Metal</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Stories</span><b>1</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>5700</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Oct 29, 2026</span>Listed for sale &middot; $699,990</li>
+              <li><span class="hdate">Oct 1, 2026</span>Listing removed &middot; $699,990</li>
+              <li><span class="hdate">May 18, 2026</span>Price change &middot; $699,990 (+2.9%)</li>
+              <li><span class="hdate">Apr 22, 2026</span>Listed for sale &middot; $679,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="699990" data-search="23033 sw 119 ave, miami, fl 33170 silver parc single family">
+      <div class="card-photo">
+        <img src="img-f29aca9d9d.jpg" alt="23033 SW 119 Ave, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$699,990</div>
+        <h3 class="addr">23033 SW 119 Ave, Miami, FL 33170</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Lot 7,855 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12114849</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-desc">New construction in a very central area, no association or CDD tax, 3 and 4 bedrooms available, one car garage. Seller will help with closing costs with the preferred lender. Estimated closing date by March 2027.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Type</span><b>Single Family Residence</b></li>
+              <li><span>Year built</span><b>2026</b></li>
+              <li><span>Parking</span><b>1-car garage</b></li>
+              <li><span>Lot</span><b>7,855 SF</b></li>
+              <li><span>Community</span><b>Silver Parc</b></li>
+              <li><span>HOA</span><b>No HOA, no CDD</b></li>
+            </ul>
+            <p class="more-src">Listing details from this home&rsquo;s MLS listing &middot; Pulled Nov 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="699990" data-search="23033 sw 119th ave, miami, fl 33142 silver parc single family">
+      <div class="card-photo">
+        <img src="img-eacdd655db.jpg" alt="23033 SW 119th Ave, Miami, FL 33142" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$699,990</div>
+        <h3 class="addr">23033 SW 119th Ave, Miami, FL 33142</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Lot 6,226 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12054647</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Jul 16, 2026 &middot; 117 days on market</p>
+            <p class="more-desc">New construction of 19 single-family houses with no association or CDD, 3 and 4 bedrooms available, FHA approved, some closing costs available with the preferred lender. Only floor plans available. Estimated closing date by March 2027.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,300</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Electric Range, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Catalina</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Lot</span><b>6,226 SF</b></li>
+              <li><span>Parking</span><b>1 garage space; driveway</b></li>
+              <li><span>Roof</span><b>Metal</b></li>
+              <li><span>Rooms</span><b>Attic</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Stories</span><b>2</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>5700</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Jul 16, 2026</span>Listed for sale &middot; $699,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="699990" data-search="11919 sw 231 lane, miami, fl 33170 silver parc single family">
+      <div class="card-photo">
+        <img src="img-45e63ed229.jpg" alt="11919 SW 231 lane, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$699,990</div>
+        <h3 class="addr">11919 SW 231 lane, Miami, FL 33170</h3>
+        <p class="specs">3 bd &middot; 2 full, 1 half ba &middot; Lot 5,059 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12012321</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since May 4, 2026 &middot; 190 days on market</p>
+            <p class="more-desc">New construction in a very central area, no association or CDD tax, 3 and 4 bedrooms available. 4 bedrooms, 3.5 bathrooms, two-story single-family house with one car garage, FHA approved. Estimated closing date by December 2026. Some closing costs available with the preferred lender.</p>
+            <p class="more-high"><b>Highlights:</b> Two-story single-family house; one car garage</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,023</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Electric Range, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Catalina</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Carpet, Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, FHA, FHA-VA Approved</b></li>
+              <li><span>Lot</span><b>5,059 SF</b></li>
+              <li><span>Parking</span><b>1 attached garage space; driveway</b></li>
+              <li><span>Roof</span><b>Metal</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Stories</span><b>1</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>5700</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">May 18, 2026</span>Price change &middot; $699,990 (+2.9%)</li>
+              <li><span class="hdate">May 4, 2026</span>Listed for sale &middot; $679,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="709990" data-search="11911 sw 231st lane, miami, fl 33170 silver parc single family">
+      <div class="card-photo">
+        <img src="img-482e451711.jpg" alt="11911 SW 231st lane, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$709,990</div>
+        <h3 class="addr">11911 SW 231st lane, Miami, FL 33170</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; Lot 5,041 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12021603</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since May 19, 2026 &middot; 175 days on market</p>
+            <p class="more-desc">New construction in a very central area — only 14 houses, no association or CDD tax. Estimated delivery date by 02/28/2027. 3 and 4 bedrooms available: 4 bed / 3 bath two-story single-family house with 2-car garage, one bedroom and full bathroom on the 1st floor. Only floor plans available.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,700</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Microwave, Electric Range, Refrigerator; washer/dryer hook-up</b></li>
+              <li><span>Builder model</span><b>Eluthera</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, VA Loan</b></li>
+              <li><span>Lot</span><b>5,041 SF</b></li>
+              <li><span>Parcel #</span><b>3069130001310</b></li>
+              <li><span>Parking</span><b>2 attached garage spaces; driveway</b></li>
+              <li><span>Roof</span><b>Aluminum</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Stories</span><b>2</b></li>
+              <li><span>View</span><b>City Lights</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>9000</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">May 19, 2026</span>Listed for sale &middot; $709,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="749990" data-search="23149 sw 119th ave, miami, fl 33170 silver parc single family">
+      <div class="card-photo">
+        <img src="img-3e0f7a00c5.jpg" alt="23149 SW 119th Ave, Miami, FL 33170" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$749,990</div>
+        <h3 class="addr">23149 SW 119th Ave, Miami, FL 33170</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Lot 5,028 SF &middot; Built 2026</p>
+        <p class="meta">Silver Parc &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12020829</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since May 18, 2026 &middot; 176 days on market</p>
+            <p class="more-desc">New construction of 14 single-family houses in a very central area. No association or CDD; 3 and 4 bedrooms available. 4 bedrooms, 3 bathrooms with 1-car garage, one bedroom and full bathroom on the 1st floor. Estimated closing date February 2027. Only brochures available.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$2,300</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Electric Range, Refrigerator</b></li>
+              <li><span>Builder model</span><b>Flamingo</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>HOA</span><b>None — no association or CDD</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>Conventional, FHA-VA Approved</b></li>
+              <li><span>Lot</span><b>5,028 SF</b></li>
+              <li><span>Parking</span><b>2 garage spaces; driveway</b></li>
+              <li><span>Roof</span><b>Metal</b></li>
+              <li><span>Rooms</span><b>Attic</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Stories</span><b>2</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>5700</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">May 18, 2026</span>Listed for sale &middot; $749,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="794990" data-search="18903 sw 317th ter, homestead, fl 33030 highland estates single family">
+      <div class="card-photo">
+        <img src="img-8b88c28cb5.jpg" alt="18903 SW 317th Ter, Homestead, FL 33030" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$794,990</div>
+        <h3 class="addr">18903 SW 317th Ter, Homestead, FL 33030</h3>
+        <p class="specs">5 bd &middot; 4 full ba &middot; Lot 7,588 SF &middot; Built 2025</p>
+        <p class="meta">Highland Estates &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12078658</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Aug 27, 2026 &middot; 75 days on market</p>
+            <p class="more-desc">New construction on a corner lot. Two-story single-family house, ready to close — 5 bedrooms, 4 bathrooms, one bedroom and full bathroom on the 1st floor, nice kitchen and bathrooms, patio for entertaining. Seller will help with closing costs with the preferred lender.</p>
+            <p class="more-high"><b>Highlights:</b> Corner lot; patio for entertaining; nice kitchen</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Annual taxes</span><b>$3,400</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Range, Electric Water Heater, Microwave, Refrigerator; washer/dryer hook-up</b></li>
+              <li><span>Builder model</span><b>Ellis</b></li>
+              <li><span>Construction</span><b>CBS Construction</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Flooring</span><b>Carpet, Ceramic Tile</b></li>
+              <li><span>HOA fee</span><b>$100/mo</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Listing terms</span><b>All Cash</b></li>
+              <li><span>Lot</span><b>7,588 SF corner lot</b></li>
+              <li><span>Parcel #</span><b>3078140170160</b></li>
+              <li><span>Parking</span><b>2 garage spaces; driveway</b></li>
+              <li><span>Roof</span><b>Metal</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room, Florida Room</b></li>
+              <li><span>Sewer</span><b>Septic Tank</b></li>
+              <li><span>Stories</span><b>2</b></li>
+              <li><span>Tax assessed value</span><b>$144,762</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Warranty</span><b>Included</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Zoning</span><b>0102</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Aug 27, 2026</span>Listed for sale &middot; $794,990</li>
+              <li><span class="hdate">Jul 31, 2026</span>Listing removed &middot; $794,990</li>
+              <li><span class="hdate">Aug 13, 2025</span>Listed for sale &middot; $794,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="974990" data-search="9630 sw 208th ter, cutler bay, fl 33189 century at cutler bay single family">
+      <div class="card-photo">
+        <img src="img-733639e12d.jpg" alt="9630 SW 208th Ter, Cutler Bay, FL 33189" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$974,990</div>
+        <h3 class="addr">9630 SW 208th Ter, Cutler Bay, FL 33189</h3>
+        <p class="specs">4 bd &middot; 4 full ba &middot; Lot 13,092 SF &middot; Built 2026</p>
+        <p class="meta">Century at Cutler Bay &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12026730</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since May 28, 2026 &middot; 166 days on market</p>
+            <p class="more-desc">New construction in Cutler Bay Florida with no association or CDD, ready to close. 4 bedrooms, 4 bathrooms with 2 car garage. All tiled throughout, nice kitchen and bathrooms, covered terrace, big patio with space for a boat and pool. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>4 full</b></li>
+              <li><span>Rooms</span><b>Attic, Family Room, Florida Room</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Disposal, Electric Water Heater, Microwave, Electric Range</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Parking</span><b>Driveway, 2 attached garage spaces</b></li>
+              <li><span>Stories</span><b>1</b></li>
+              <li><span>Patio &amp; porch</span><b>Open Porch, Patio</b></li>
+              <li><span>Exterior features</span><b>Lighting, Room for Pool</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Lot</span><b>0.3 acres</b></li>
+              <li><span>Construction</span><b>CBS, Barrel roof</b></li>
+              <li><span>Builder model</span><b>Lauren 2</b></li>
+              <li><span>Warranty</span><b>Yes</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Subdivision</span><b>Century At Cutler Bay</b></li>
+              <li><span>HOA</span><b>No HOA</b></li>
+              <li><span>Annual taxes</span><b>$3,400</b></li>
+              <li><span>Zoning</span><b>0100</b></li>
+              <li><span>Parcel #</span><b>3660090400030</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, VA Loan</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">May 29, 2026</span>Listed for sale &middot; $974,990</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="999990" data-search="2045 sw 155th ave, miami, fl 33185 century heights single family">
+      <div class="card-photo">
+        <img src="img-0e5cc41734.jpg" alt="2045 SW 155th Ave, Miami, FL 33185" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$999,990</div>
+        <h3 class="addr">2045 SW 155th Ave, Miami, FL 33185</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; Lot 6,161 SF &middot; Built 2026</p>
+        <p class="meta">Century Heights &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12094367</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 23, 2026 &middot; 48 days on market</p>
+            <p class="more-desc">Beautiful new construction home in West Kendall! This stunning single-story residence features 4 bedrooms, 3.5 bathrooms, and a spacious 2-car garage. Enjoy tile flooring throughout the entire home, a modern kitchen with quartz countertops, stainless steel appliances, and beautifully finished bathrooms with quartz countertops. Spacious backyard perfect for entertaining and enjoying the South Florida lifestyle. NO HOA and NO CDD! Ready to close and seller is offering assistance toward buyer's closing costs. Easy to show — schedule your showing today!</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full + 1 half</b></li>
+              <li><span>Rooms</span><b>Family Room</b></li>
+              <li><span>Interior features</span><b>Kitchen Island, Entrance Foyer, Walk-In Closet(s)</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Electric Range, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>Doors</span><b>High Impact Doors, French Doors</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Parking</span><b>Driveway, 2 garage spaces</b></li>
+              <li><span>Stories</span><b>1</b></li>
+              <li><span>Patio &amp; porch</span><b>Patio</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Lot</span><b>6,161 SF</b></li>
+              <li><span>Construction</span><b>CBS, Barrel roof</b></li>
+              <li><span>Warranty</span><b>Yes</b></li>
+              <li><span>Sewer</span><b>Public Sewer</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Subdivision</span><b>Century Heights</b></li>
+              <li><span>HOA</span><b>No HOA</b></li>
+              <li><span>Annual taxes</span><b>$3,780</b></li>
+              <li><span>Tax assessed value</span><b>$223,220</b></li>
+              <li><span>Zoning</span><b>0102</b></li>
+              <li><span>Parcel #</span><b>3049090210030</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, VA Loan</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 23, 2026</span>Listed for sale &middot; $999,990 (−0.7%)</li>
+              <li><span class="hdate">Mar 17, 2026</span>Listed for sale &middot; $1,006,990</li>
+            </ul>
+            <h4>Tax history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">2025</span>Taxes $3,307 &middot; Assessed $223,220</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="1199990" data-search="3240 sw 89th ave, miami, fl 33165 olympic heights single family">
+      <div class="card-photo">
+        <img src="img-14fc569b1f.jpg" alt="3240 SW 89th Ave, Miami, FL 33165" width="640" height="853">
+        <span class="badge">New Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$1,199,990</div>
+        <h3 class="addr">3240 SW 89th Ave, Miami, FL 33165</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; Lot 7,000 SF &middot; Built 2026</p>
+        <p class="meta">Olympic Heights &middot; Single Family</p>
+        <p class="mls">MLS&reg; #A12094308</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 23, 2026 &middot; 48 days on market</p>
+            <p class="more-desc">Brand-new construction in Westchester! Beautiful two-story home featuring 4 bedrooms, 3 bathrooms, and a 2-car garage. Spacious layout with tile flooring throughout the first floor and laminate flooring upstairs. Modern kitchen featuring quartz countertops and stainless steel appliances. Plenty of space to park a boat. No HOA and no CDD! 4- and 5-bedroom homes available. Excellent opportunity to own new construction in a highly desirable Westchester location.</p>
+            <p class="more-high"><b>Highlights:</b> Quartz countertops; Modern kitchen; Spacious layout; Laminate flooring upstairs; Stainless steel appliances</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full</b></li>
+              <li><span>Rooms</span><b>Family Room</b></li>
+              <li><span>Interior features</span><b>Kitchen Island, Entrance Foyer, Pantry, Split Bedroom, Walk-In Closet(s)</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Electric Range, Electric Water Heater, Microwave, Refrigerator</b></li>
+              <li><span>Flooring</span><b>Ceramic Tile</b></li>
+              <li><span>Doors</span><b>High Impact Doors</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Cooling</span><b>Central Air, Electric</b></li>
+              <li><span>Parking</span><b>Driveway, 2 attached garage spaces</b></li>
+              <li><span>Stories</span><b>2</b></li>
+              <li><span>Patio &amp; porch</span><b>Patio</b></li>
+              <li><span>Exterior features</span><b>Room for Pool</b></li>
+              <li><span>View</span><b>Garden</b></li>
+              <li><span>Lot</span><b>7,000 SF</b></li>
+              <li><span>Construction</span><b>CBS, Barrel roof</b></li>
+              <li><span>Warranty</span><b>Yes</b></li>
+              <li><span>Sewer</span><b>Septic Tank</b></li>
+              <li><span>Water</span><b>Municipal Water</b></li>
+              <li><span>Subdivision</span><b>Olympic Heights</b></li>
+              <li><span>HOA</span><b>No HOA</b></li>
+              <li><span>Annual taxes</span><b>$3,001</b></li>
+              <li><span>Tax assessed value</span><b>$287,000</b></li>
+              <li><span>Flood zone</span><b>FEMA Zone X (unshaded), minimal-risk flood area</b></li>
+              <li><span>Zoning</span><b>5700</b></li>
+              <li><span>Parcel #</span><b>3040160020690</b></li>
+              <li><span>Listing terms</span><b>All Cash, Conventional, VA Loan</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Oct 21, 2026</span>Price change &middot; $1,199,990 (+14.3%)</li>
+              <li><span class="hdate">Sep 23, 2026</span>Listed for sale &middot; $1,049,990 (+31.2%)</li>
+              <li><span class="hdate">Mar 8, 2024</span>Sold &middot; $800,000 (prior MLS A11498081)</li>
+              <li><span class="hdate">Feb 21, 2024</span>Contingent &middot; $850,000</li>
+              <li><span class="hdate">Dec 8, 2023</span>Listed for sale &middot; $850,000</li>
+            </ul>
+            <h4>Tax history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">2025</span>Taxes $5,570 &middot; Assessed $287,000</li>
+              <li><span class="hdate">2024</span>Taxes $11,150 &middot; Assessed $595,188</li>
+              <li><span class="hdate">2023</span>Taxes $9,792 &middot; Assessed $541,080</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="sale" data-price="2990000" data-search="22555 sw 125th ave, homestead, fl 33034 chloe estates townhouse">
+      <div class="card-photo">
+        <img src="img-a59772d052.jpg" alt="22555 SW 125th Ave, Homestead, FL 33034" width="640" height="853">
+        <span class="badge">Under Construction</span>
+      </div>
+      <div class="card-body">
+        <div class="price">$2,990,000</div>
+        <h3 class="addr">22555 SW 125th Ave, Homestead, FL 33034</h3>
+        <p class="specs">5 bd &middot; 4 full ba &middot; Built 2024</p>
+        <p class="meta">Chloe Estates &middot; Townhouse</p>
+        <p class="mls">MLS&reg; #A12078190</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">76 days on market</p>
+            <p class="more-desc">2025 ULTRA-LUXURY 5,000 SF DUPLEX | TWO SEPARATE FOLIOS | 100% LEASED | 5.14% CAP | GUARANTEED RENT. Brand-new 2025 construction. Zero cap-ex. Zero headaches. Two individually deeded, separately sellable townhomes — Folio 30-6913-059-0010 &amp; 30-6913-059-0020 — sell or finance each side independently. 5,000 SF total under air, high 10–12 ft ceilings throughout. Unit A: 2,500 SF, 5 Bed, 4 Bath. Unit B: 2,500 SF, 5 Bed, 3 Bath. Premium finishes: full impact windows &amp; doors, 32x32 polished porcelain tile floors, solid-wood soft-close cabinetry, quartz countertops with waterfall edges, stainless-steel appliance package, spa-like master baths with frameless glass &amp; designer fixtures, LED lighting + smart-home prewire. Tenants pay ALL utilities, maintain lawns, and handle minor repairs. Huge private fenced yards — fully permitted &amp; pool-ready. 100% OCCUPIED: Unit B @ $5,300/mo on a 3-year corporate lease to a licensed ALF; Unit A @ $4,400/mo Section 8 — Miami-Dade guaranteed rent wired monthly. $116,400 Gross | $102,253 NOI | 5.14% current cap rate.</p>
+            <p class="more-high"><b>Highlights:</b> Solid-wood soft-close cabinetry; Stainless-steel appliance package</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>5</b></li>
+              <li><span>Bathrooms</span><b>4 full</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2024</b></li>
+              <li><span>Parking</span><b>Assigned</b></li>
+              <li><span>Folios</span><b>30-6913-059-0010 &amp; 30-6913-059-0020</b></li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+
+  <section class="block" id="for-rent">
+    <div class="section-head">
+      <h2>For Rent</h2>
+      <span class="count">9 listings</span>
+    </div>
+    <p class="section-sub">Active MLS rental listings — villas and apartments in Florida City and Miami.</p>
+    <div class="grid" id="gridRent">
+<article class="card" data-kind="rent" data-price="2150" data-search="3123 nw 22nd ct unit b, miami, fl 33142 glenhaven apartment">
+      <div class="card-photo">
+        <img src="img-b5fcc9782d.jpg" alt="3123 NW 22nd Ct Unit B, Miami, FL 33142" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,150/mo</div>
+        <h3 class="addr">3123 NW 22nd Ct Unit B, Miami, FL 33142</h3>
+        <p class="specs">2 bd &middot; 1 full ba &middot; Lot 5,400 SF &middot; Built 1925</p>
+        <p class="meta">Glenhaven &middot; Apartment</p>
+        <p class="mls">MLS&reg; #A12106626</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Nov 3, 2026 &middot; 7 days on market</p>
+            <p class="more-desc">Location, location, location — 2/1 remodeled, ready to move in. Full background check required. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>2</b></li>
+              <li><span>Bathrooms</span><b>1 full</b></li>
+              <li><span>Type</span><b>Apartment</b></li>
+              <li><span>Year built</span><b>1925</b></li>
+              <li><span>Parking</span><b>Contact manager for parking details</b></li>
+              <li><span>Stories</span><b>1</b></li>
+              <li><span>Neighborhood</span><b>Allapattah</b></li>
+              <li><span>Lease</span><b>Lease term: contact for details</b></li>
+              <li><span>Move-in costs</span><b>Security deposit $4,300; est. move-in cost $4,300</b></li>
+              <li><span>Pets</span><b>No pets allowed</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Nov 3, 2026</span>Listed for rent &middot; $2,150</li>
+              <li><span class="hdate">Jul 28, 2026</span>Listed for rent &middot; $2,150 (−6.5%, prior MLS A12061272)</li>
+              <li><span class="hdate">Aug 30, 2024</span>Listed for rent &middot; $2,300 (prior MLS A11650874)</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Nov 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2485" data-search="58 nw 10th ter unit 58 b, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-749ce7c930.jpg" alt="58 NW 10th Ter Unit 58 B, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,485/mo</div>
+        <h3 class="addr">58 NW 10th Ter Unit 58 B, Florida City, FL 33034</h3>
+        <p class="specs">3 bd &middot; 2 full, 1 half ba &middot; 1,440 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12025272</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since May 26, 2026 &middot; 168 days on market</p>
+            <p class="more-desc">New rental community near Key Largo, Florida. Be the first one living here — ready to move in. 3 and 4 bedrooms available; this home has 3 bedrooms and 2.5 bathrooms. Washer, dryer and blinds included. Full background check and approval required. One month security deposit, one month free. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>3</b></li>
+              <li><span>Bathrooms</span><b>2 full + 1 half</b></li>
+              <li><span>Living area</span><b>1,440 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Heating</span><b>Central, Electric</b></li>
+              <li><span>Cooling</span><b>Air conditioner, Central Air, Electric</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Move-in costs</span><b>One month security deposit; one month free</b></li>
+              <li><span>Pets</span><b>Cats and dogs OK</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+              <li><span>Included with rent</span><b>Washer, dryer and blinds included</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 19, 2026</span>Price change &middot; $2,485 (−7.8%)</li>
+              <li><span class="hdate">May 26, 2026</span>Listed for rent &middot; $2,695</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2655" data-search="122 nw 10th ter unit 122 c, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-a746b706d3.jpg" alt="122 NW 10th Ter Unit 122 C, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,655/mo</div>
+        <h3 class="addr">122 NW 10th Ter Unit 122 C, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; 1,524 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12024822</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since May 25, 2026 &middot; 169 days on market</p>
+            <p class="more-desc">New community for rent — 3 and 4 bedrooms available. One month free, only one month security deposit. 4 bedrooms and 3 bathrooms, ready to move in, with one bedroom and full bathroom on the 1st floor. Full background check required. Approval required. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3</b></li>
+              <li><span>Living area</span><b>1,524 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Parcel #</span><b>16-78-24-055-0130</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Move-in costs</span><b>One month security deposit; one month free</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2795" data-search="152 nw 10 terr unit 152 d, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-4e587952b7.jpg" alt="152 NW 10 Terr Unit 152 D, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,795/mo</div>
+        <h3 class="addr">152 NW 10 Terr Unit 152 D, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; 1,374 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12093541</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">New rental community of 45 villas — 3 and 4 bedrooms available for rent. This corner-lot home has 4 bedrooms and 3.5 bathrooms, with one bedroom and 1.5 bathrooms on the 1st floor. Ready to move in. Full background check and approval required. Easy to show.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full + 1 half</b></li>
+              <li><span>Living area</span><b>1,374 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Dryer, Electric Range, Electric Water Heater, Garbage Disposal, Microwave, Refrigerator, Washer</b></li>
+              <li><span>Laundry</span><b>In-unit laundry</b></li>
+              <li><span>Community</span><b>Century Park Villas (45 villas)</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Move-in costs</span><b>Security deposit $2,795; est. move-in cost $2,795</b></li>
+              <li><span>Pets</span><b>Cats and dogs OK</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for rent &middot; $2,795 (−4.9%)</li>
+              <li><span class="hdate">Sep 21, 2026</span>Listing removed &middot; $2,940</li>
+              <li><span class="hdate">May 28, 2026</span>Listed for rent &middot; $2,940</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2795" data-search="49 nw 10 th st unit 49 d, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-ba85beeab0.jpg" alt="49 NW 10 Th St Unit 49 D, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,795/mo</div>
+        <h3 class="addr">49 NW 10 Th St Unit 49 D, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; 1,374 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12093534</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">New construction — ready now. Brand-new townhome villa in a 45-villa rental community, with first month free and only one month security deposit on the community's move-in special.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full + 1 half</b></li>
+              <li><span>Living area</span><b>1,374 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Dryer, Electric Range, Electric Water Heater, Garbage Disposal, Microwave, Refrigerator, Washer</b></li>
+              <li><span>Laundry</span><b>In-unit laundry</b></li>
+              <li><span>Community</span><b>Century Park Villas (45 villas)</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Pets</span><b>Cats and dogs OK</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for rent &middot; $2,795</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2795" data-search="1017 nw 1 ave unit 1017 d, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-854e6d8ba4.jpg" alt="1017 NW 1 Ave Unit 1017 D, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,795/mo</div>
+        <h3 class="addr">1017 NW 1 Ave Unit 1017 D, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; 1,374 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12093517</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">New construction — ready now. Brand-new townhome villa in a 45-villa rental community, with first month free and only one month security deposit on the community's move-in special.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full + 1 half</b></li>
+              <li><span>Living area</span><b>1,374 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Dryer, Electric Range, Electric Water Heater, Garbage Disposal, Microwave, Refrigerator, Washer</b></li>
+              <li><span>Laundry</span><b>In-unit laundry</b></li>
+              <li><span>Community</span><b>Century Park Villas (45 villas)</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Move-in costs</span><b>Security deposit $2,795; est. move-in cost $2,795</b></li>
+              <li><span>Pets</span><b>Cats and dogs OK</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for rent &middot; $2,795</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2795" data-search="1037 nw 1 ave unit 1037 d, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-7dc584d0b5.jpg" alt="1037 NW 1 Ave Unit 1037 D, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,795/mo</div>
+        <h3 class="addr">1037 NW 1 Ave Unit 1037 D, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full, 1 half ba &middot; 1,374 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12093473</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">Ready to move in now — one month free, only one month deposit. Brand-new townhome villa in a 45-villa rental community.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full + 1 half</b></li>
+              <li><span>Living area</span><b>1,374 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Dryer, Electric Range, Electric Water Heater, Garbage Disposal, Microwave, Refrigerator, Washer</b></li>
+              <li><span>Laundry</span><b>In-unit laundry</b></li>
+              <li><span>Community</span><b>Century Park Villas (45 villas)</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Move-in costs</span><b>Security deposit $2,795; est. move-in cost $2,795</b></li>
+              <li><span>Pets</span><b>Cats and dogs OK</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for rent &middot; $2,795</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2895" data-search="1027 nw 1 ave unit 1027c, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-08b084dbd5.jpg" alt="1027 NW 1 Ave Unit 1027c, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,895/mo</div>
+        <h3 class="addr">1027 NW 1 Ave Unit 1027c, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; 1,374 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12093458</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <p class="more-dom">On the market since Sep 22, 2026 &middot; 49 days on market</p>
+            <p class="more-desc">Ready to move in now — one month free. Brand-new townhome villa in a 45-villa rental community.</p>
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full</b></li>
+              <li><span>Living area</span><b>1,374 SF</b></li>
+              <li><span>Type</span><b>Townhouse</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Appliances</span><b>Dishwasher, Dryer, Electric Range, Electric Water Heater, Garbage Disposal, Microwave, Refrigerator, Washer</b></li>
+              <li><span>Laundry</span><b>In-unit laundry</b></li>
+              <li><span>Community</span><b>Century Park Villas (45 villas)</b></li>
+              <li><span>Lease</span><b>12-month lease</b></li>
+              <li><span>Move-in costs</span><b>Security deposit $2,655; est. move-in cost $2,655</b></li>
+              <li><span>Pets</span><b>Cats and dogs OK</b></li>
+              <li><span>Availability</span><b>Available now</b></li>
+            </ul>
+            <h4>Price history</h4>
+            <ul class="more-hist">
+              <li><span class="hdate">Sep 22, 2026</span>Listed for rent &middot; $2,655</li>
+            </ul>
+            <p class="more-src">Listing details via the MLS feed as shown on Zillow &middot; Pulled Oct 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+<article class="card" data-kind="rent" data-price="2895" data-search="54 nw 10th ter unit 54 c, florida city, fl 33034  villa">
+      <div class="card-photo">
+        <img src="img-2d30436b6d.jpg" alt="54 NW 10th Ter Unit 54 C, Florida City, FL 33034" width="640" height="853">
+        
+      </div>
+      <div class="card-body">
+        <div class="price">$2,895/mo</div>
+        <h3 class="addr">54 NW 10th Ter Unit 54 C, Florida City, FL 33034</h3>
+        <p class="specs">4 bd &middot; 3 full ba &middot; 1,524 SF living &middot; Lot 1,620 SF &middot; Built 2025</p>
+        <p class="meta">Villa</p>
+        <p class="mls">MLS&reg; #A12025293</p>
+        <details class="more">
+          <summary>Full listing details</summary>
+          <div class="more-body">
+            <h4>Facts &amp; features</h4>
+            <ul class="more-facts">
+              <li><span>Bedrooms</span><b>4</b></li>
+              <li><span>Bathrooms</span><b>3 full</b></li>
+              <li><span>Living area</span><b>1,524 SF</b></li>
+              <li><span>Type</span><b>Villa</b></li>
+              <li><span>Year built</span><b>2025</b></li>
+              <li><span>Lot</span><b>1,620 SF</b></li>
+            </ul>
+            <p class="more-src">Details from the MLS listing &middot; Pulled Nov 2026</p>
+          </div>
+        </details>
+        
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+
+  <div class="no-results" id="noResults">No listings match your search. Try a different address or community — or text Reynaldo and he will find it for you.</div>
+</div>
+
+<section class="featured" id="featured">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Featured / Off-Market</h2>
+      <span class="count">10 properties</span>
+    </div>
+    <p class="section-sub">Offered separately from the MLS inventory above — the six pre-sale homes at Ava&rsquo;s Estates and the new R. Homes Lux condos, both by R. Homes in Homestead, plus a brand-new Class A medical building, an off-market new-construction townhouse, and executive suites for rent in Homestead. Call Reynaldo for full details.</p>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-af792dc4bd.jpg" alt="Jade at Ava's Estates, Homestead — exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Ava&rsquo;s Estates &middot; Preconstruction by R. Homes</span>
+        <h3>Jade — Ava&rsquo;s Estates</h3>
+        <div class="fprice">From $1,259,990</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale</span>
+        </div>
+        <p class="faddr">19440 SW 296 St, Homestead, FL 33030</p>
+        <p class="fdesc">One of six modern luxury homes in Ava&rsquo;s Estates, R. Homes&rsquo; newest preconstruction community in Homestead — pre-sale starting now, offered off-market through Reynaldo.</p>
+        <ul class="speclist">
+          <li>5 bd &middot; 5.5 ba</li>
+          <li>4,494 SF living area</li>
+          <li>2-car garage</li>
+          <li>3 ensuite bedrooms and a guest suite</li>
+          <li>Dual master</li>
+          <li>Rooftop</li>
+          <li>Impact windows and doors</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/jade-avas-estates/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-4b4ae88ba7.jpg" alt="Onelio at Ava's Estates, Homestead — exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Ava&rsquo;s Estates &middot; Preconstruction by R. Homes</span>
+        <h3>Onelio — Ava&rsquo;s Estates</h3>
+        <div class="fprice">From $1,179,990</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale</span>
+        </div>
+        <p class="faddr">19440 SW 296 St, Homestead, FL 33030</p>
+        <p class="fdesc">One of six modern luxury homes in Ava&rsquo;s Estates, R. Homes&rsquo; newest preconstruction community in Homestead — pre-sale starting now, offered off-market through Reynaldo.</p>
+        <ul class="speclist">
+          <li>5 bd &middot; 5 ba</li>
+          <li>4,187 SF living area</li>
+          <li>2-car garage</li>
+          <li>Rooftop styled with a modern outdoor kitchen</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/onelio-avas-estates/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-e14f887ead.jpg" alt="Sophia at Ava's Estates, Homestead — exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Ava&rsquo;s Estates &middot; Preconstruction by R. Homes</span>
+        <h3>Sophia — Ava&rsquo;s Estates</h3>
+        <div class="fprice">From $799,990</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale</span>
+        </div>
+        <p class="faddr">19440 SW 296 St, Homestead, FL 33030</p>
+        <p class="fdesc">One of six modern luxury homes in Ava&rsquo;s Estates, R. Homes&rsquo; newest preconstruction community in Homestead — pre-sale starting now, offered off-market through Reynaldo.</p>
+        <ul class="speclist">
+          <li>5 bd &middot; 3 ba</li>
+          <li>2,852 SF living area</li>
+          <li>2-car garage</li>
+          <li>Single-story</li>
+          <li>Impact windows and doors</li>
+          <li>Smart technology throughout</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/sophia-avas-estates/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-9a9413e8f7.jpg" alt="Jennifer at Ava's Estates, Homestead — exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Ava&rsquo;s Estates &middot; Preconstruction by R. Homes</span>
+        <h3>Jennifer — Ava&rsquo;s Estates</h3>
+        <div class="fprice">From $759,999</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale</span>
+        </div>
+        <p class="faddr">19440 SW 296 St, Homestead, FL 33030</p>
+        <p class="fdesc">One of six modern luxury homes in Ava&rsquo;s Estates, R. Homes&rsquo; newest preconstruction community in Homestead — pre-sale starting now, offered off-market through Reynaldo.</p>
+        <ul class="speclist">
+          <li>4 bd &middot; 3 ba</li>
+          <li>2,608 SF living area</li>
+          <li>2-car garage</li>
+          <li>Home office</li>
+          <li>Covered terrace and rooftop</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/jennifer-avas-estates/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-27022d6f81.jpg" alt="Paula at Ava's Estates, Homestead — exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Ava&rsquo;s Estates &middot; Preconstruction by R. Homes</span>
+        <h3>Paula — Ava&rsquo;s Estates</h3>
+        <div class="fprice">From $959,990</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale</span>
+        </div>
+        <p class="faddr">19440 SW 296 St, Homestead, FL 33030</p>
+        <p class="fdesc">One of six modern luxury homes in Ava&rsquo;s Estates, R. Homes&rsquo; newest preconstruction community in Homestead — pre-sale starting now, offered off-market through Reynaldo.</p>
+        <ul class="speclist">
+          <li>5 bd &middot; 3 ba</li>
+          <li>3,382 SF living area</li>
+          <li>2-car garage</li>
+          <li>In-law suite</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/paula-avas-estates/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-914149a5f8.jpg" alt="Estrella at Ava's Estates, Homestead — exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Ava&rsquo;s Estates &middot; Preconstruction by R. Homes</span>
+        <h3>Estrella — Ava&rsquo;s Estates</h3>
+        <div class="fprice">From $859,990</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale</span>
+        </div>
+        <p class="faddr">19440 SW 296 St, Homestead, FL 33030</p>
+        <p class="fdesc">One of six modern luxury homes in Ava&rsquo;s Estates, R. Homes&rsquo; newest preconstruction community in Homestead — pre-sale starting now, offered off-market through Reynaldo.</p>
+        <ul class="speclist">
+          <li>4 bd &middot; 3 ba</li>
+          <li>2,852 SF living area</li>
+          <li>2-car garage</li>
+          <li>In-law suite</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/estrella-avas-estate/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia">
+        <div class="fmain"><img src="img-ec582942d6.jpg" alt="R. Homes Lux — new luxury condo building in Homestead, evening exterior rendering" loading="lazy"></div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">R. Homes Lux &middot; New Luxury Condos</span>
+        <h3>R. Homes Lux</h3>
+        <div class="fprice">From $265,000</div>
+        <div class="flabels">
+          <span class="offmarket">Off-Market</span>
+          <span class="presale">Pre-Sale &middot; Coming Soon</span>
+        </div>
+        <p class="faddr">Homestead, FL</p>
+        <p class="fdesc">New luxury condo building by R. Homes — pre-sale / coming soon, offered off-market through Reynaldo. Four floor plans, all starting at:</p>
+        <ul class="speclist">
+          <li>Studio &middot; 1 ba &middot; 957 SF &mdash; from $265,000</li>
+          <li>One Bedroom &middot; 1 bd &middot; 1 ba &middot; 1,416 SF &mdash; from $465,000</li>
+          <li>Two Bedroom &middot; 2 bd &middot; 2 ba &middot; 1,893 SF &mdash; from $680,000</li>
+          <li>Three Bedroom &middot; 3 bd &middot; 2+ ba &middot; 2,063 SF &mdash; from $869,900</li>
+        </ul>
+        <a class="details-link" href="https://rsouthfloridahome.com/properties/r-homes-lux/" target="_blank" rel="noopener">More photos &amp; details &rarr;</a>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia gallery">
+        <div class="fmain"><img class="gallery-main" src="img-15d356e199.jpg" alt="Ludlam Medical Center — aerial view of the building and parking"></div>
+        <div class="thumbs">
+          <button type="button" class="thumb active" data-full="img-15d356e199.jpg"><img src="img-15d356e199.jpg" alt="Ludlam Medical Center — exterior" loading="lazy"></button>
+<button type="button" class="thumb" data-full="img-e2607ce70e.jpg"><img src="img-e2607ce70e.jpg" alt="Ludlam Medical Center — lobby render"></button>
+<button type="button" class="thumb" data-full="img-348526c386.jpg"><img src="img-348526c386.jpg" alt="Ludlam Medical Center — interior render"></button>
+<button type="button" class="thumb" data-full="img-4e7c6fa7cb.jpg"><img src="img-4e7c6fa7cb.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-079ebf2243.jpg"><img src="img-079ebf2243.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-35a0f40689.jpg"><img src="img-35a0f40689.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-52e49305b7.jpg"><img src="img-52e49305b7.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-61578469d7.jpg"><img src="img-61578469d7.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-e0ddbecb9d.jpg"><img src="img-e0ddbecb9d.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-63f26ab9cd.jpg"><img src="img-63f26ab9cd.jpg" alt="Ludlam Medical Center — interior"></button>
+<button type="button" class="thumb" data-full="img-62973f3c09.jpg"><img src="img-62973f3c09.jpg" alt="Ludlam Medical Center — interior"></button>
+        </div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Featured &middot; Commercial</span>
+        <h3>Ludlam Medical Center</h3>
+        <div class="fprice">$8,500,000</div>
+        <p class="faddr">5620 SW 67th Ave, Miami, FL 33143 — corner of Ludlam Rd (SW 67th Ave) &amp; Miller Dr (SW 56th St)</p>
+        <p class="fdesc">Brand-new 2025 construction: a freestanding, two-story Class A medical and professional office building near Baptist Health South Miami, Larkin Community, and Nicklaus Children&rsquo;s hospitals.</p>
+        <ul class="speclist">
+          <li>&plusmn;10,592 rentable SF</li>
+          <li>Lot &plusmn;30,336 SF (&plusmn;0.70 ac)</li>
+          <li>44 surface parking spaces</li>
+          <li>&plusmn;4.15 spaces per 1,000 SF</li>
+          <li>Stretcher-cab elevator</li>
+          <li>On-site generator</li>
+          <li>Fire sprinklers throughout</li>
+          <li>Hurricane-impact windows &amp; doors</li>
+          <li>RU-5A semi-professional office zoning</li>
+          <li>Built 2025 &middot; 2 stories &middot; freestanding</li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia gallery">
+        <div class="fmain"><img class="gallery-main" src="img-5b7cef09c2.jpg" alt="4789 NW 1st St — front exterior"></div>
+        <div class="thumbs">
+          <button type="button" class="thumb active" data-full="img-5b7cef09c2.jpg"><img src="img-5b7cef09c2.jpg" alt="4789 NW 1st St — exterior" loading="lazy"></button>
+<button type="button" class="thumb" data-full="img-d21bcf6165.jpg"><img src="img-d21bcf6165.jpg" alt="4789 NW 1st St — kitchen"></button>
+<button type="button" class="thumb" data-full="img-661a9e3a0a.jpg"><img src="img-661a9e3a0a.jpg" alt="4789 NW 1st St — living room"></button>
+        </div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Off-Market &middot; Townhouse</span>
+        <h3>4789 NW 1st St</h3>
+        <span class="offmarket">Off-market — call for details</span>
+        <p class="faddr">4789 NW 1st St, Miami, FL 33126 — Parkers Flagler Heights / Flagami</p>
+        <p class="fdesc">2026 new-construction townhouse in Flagami, minutes from Coral Gables, downtown Miami, and Miami International Airport. Not on the MLS — available through Reynaldo directly.</p>
+        <ul class="speclist">
+          <li>3 bed / 2.5 bath</li>
+          <li>1,882 SF living area</li>
+          <li>1-car garage</li>
+          <li>Lot 4,905 SF</li>
+          <li>Built 2026 &middot; new construction</li>
+          <li>Parkers Flagler Heights / Flagami</li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="fcard">
+      <div class="fmedia gallery">
+        <div class="fmain"><img class="gallery-main" src="img-95d34700ce.jpg" alt="R Homes Executive Building — building exterior at 4 North Krome Avenue, Homestead"></div>
+        <div class="thumbs">
+          <button type="button" class="thumb active" data-full="img-95d34700ce.jpg"><img src="img-95d34700ce.jpg" alt="R Homes Executive Building — exterior"></button>
+          <button type="button" class="thumb" data-full="img-219bf2d00a.jpg"><img src="img-219bf2d00a.jpg" alt="R Homes Executive Building — reception area"></button>
+          <button type="button" class="thumb" data-full="img-549b970cae.jpg"><img src="img-549b970cae.jpg" alt="R Homes Executive Building — shared conference room"></button>
+          <button type="button" class="thumb" data-full="img-4aa1294d9f.jpg"><img src="img-4aa1294d9f.jpg" alt="R Homes Executive Building — executive suite"></button>
+          <button type="button" class="thumb" data-full="img-af0945c4f2.jpg"><img src="img-af0945c4f2.jpg" alt="R Homes Executive Building — hallway"></button>
+        </div>
+      </div>
+      <div class="fbody">
+        <span class="fkicker">Featured &middot; Executive Suites for Rent</span>
+        <h3>R Homes Executive Building</h3>
+        <div class="fprice">Suites from $1,180/mo</div>
+        <p class="faddr">4 North Krome Avenue, Homestead, FL 33030</p>
+        <p class="fdesc">Executive suites from $1,180/mo — larger offices and corner storefronts also available. First, last &amp; deposit to reserve. Call to check availability.</p>
+        <ul class="speclist">
+          <li>Reservable shared conference room</li>
+          <li>Receptionist to greet your clients</li>
+          <li>Commercial printer</li>
+          <li>Free marketing in three building directories, running 24/7</li>
+          <li>24-hour suite access</li>
+          <li>Two parking decals &amp; one parking space per unit</li>
+          <li>Water &amp; electricity included in the lease</li>
+          <li>High-speed office Wi-Fi included</li>
+        </ul>
+        <p class="fdesc">Showings Mon&ndash;Fri 8:30 AM&ndash;4:00 PM &middot; Weekends by appointment only</p>
+        <p class="fdesc">Leasing Director: Reynaldo Gonzalez &middot; 305-439-9410</p>
+        <div class="card-actions">
+          <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+          <a class="btn btn-call" href="tel:+13054399410">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About The Developer Connection</h2>
+    </div>
+    <p class="section-sub">The inside sales team for the builders — representing developers directly, so buyers and investors deal with the source, not a middleman.</p>
+    <div class="about-simple">
+      <div class="profile-row">
+        <figure class="profile-block">
+          <img class="profile-photo" src="img-f1980632da.jpg" alt="Reynaldo Gonzalez, Sales Director at Malibu Bay Realty" width="415" height="415">
+          <figcaption class="profile-caption">Reynaldo Gonzalez — Sales Director, Malibu Bay Realty</figcaption>
+        </figure>
+        <div class="about-contact">
+          <p class="about-role">Sales Director, Malibu Bay Realty</p>
+          <h3>Reynaldo Gonzalez</h3>
+          <p class="about-phone"><a href="tel:+13054399410">305-439-9410</a></p>
+          <p class="about-insta"><a class="insta-link" href="https://www.instagram.com/rey_the_realtor_/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>Instagram: @rey_the_realtor_</a></p>
+        </div>
+      </div>
+      <div class="about-contact about-contact-bottom">
+        <p>Nitza Chamizo, Business Partner, Malibu Bay Realty</p>
+        <p><a href="tel:+13058125092">305-812-5092</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-in">
+      <div>
+        <div class="fname">Reynaldo Gonzalez</div>
+        <p>Sales Director, Malibu Bay Realty &middot; The Developer Connection</p>
+        <p>New construction &amp; developer inventory — Miami, Homestead, Florida City, Cutler Bay</p>
+        <p>Call or text: <a href="tel:+13054399410">305-439-9410</a></p>
+        <p>Follow on Instagram: <a href="https://www.instagram.com/rey_the_realtor_/" target="_blank" rel="noopener">@rey_the_realtor_</a></p>
+      </div>
+      <div class="footer-actions">
+        <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
+        <a class="btn btn-call" href="tel:+13054399410">Call</a>
+        <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <p class="footer-note">Listing information and photos from the MLS (Matrix), pulled November 6, 2026. Prices and availability subject to change — contact Reynaldo Gonzalez, Malibu Bay Realty, to confirm.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var q = document.getElementById('q');
+  var sort = document.getElementById('sort');
+  var line = document.getElementById('resultLine');
+  var noRes = document.getElementById('noResults');
+  var secSale = document.getElementById('for-sale');
+  var secRent = document.getElementById('for-rent');
+  var filter = 'all';
+
+  function apply(){
+    var term = q.value.trim().toLowerCase();
+    var visible = 0, vSale = 0, vRent = 0;
+    cards.forEach(function(card){
+      var okKind = (filter === 'all' || card.getAttribute('data-kind') === filter);
+      var okTerm = (!term || card.getAttribute('data-search').indexOf(term) !== -1);
+      var show = okKind && okTerm;
+      card.style.display = show ? '' : 'none';
+      if (show){ visible++; if (card.getAttribute('data-kind') === 'sale') vSale++; else vRent++; }
+    });
+    secSale.style.display = (vSale === 0) ? 'none' : '';
+    secRent.style.display = (vRent === 0) ? 'none' : '';
+    noRes.style.display = (visible === 0) ? 'block' : 'none';
+    line.textContent = visible === 36 && !term && filter === 'all'
+      ? 'Showing all 36 MLS listings'
+      : 'Showing ' + visible + ' of 36 MLS listings';
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.setAttribute('aria-pressed','false'); });
+      tab.setAttribute('aria-pressed','true');
+      filter = tab.getAttribute('data-filter');
+      apply();
+    });
+  });
+  q.addEventListener('input', apply);
+
+  function sortGrids(mode){
+    ['gridSale','gridRent'].forEach(function(id){
+      var grid = document.getElementById(id);
+      if (!grid) return;
+      var items = Array.prototype.slice.call(grid.children);
+      // Default order is now price low to high (same as 'asc')
+      var effective = (mode === 'default') ? 'asc' : mode;
+      items.sort(function(a,b){
+        var pa = parseInt(a.getAttribute('data-price'),10);
+        var pb = parseInt(b.getAttribute('data-price'),10);
+        return effective === 'asc' ? pa - pb : pb - pa;
+      });
+      items.forEach(function(it){ grid.appendChild(it); });
+    });
+  }
+
+  // Enforce low-to-high on load for For Sale (and For Rent)
+  sortGrids('asc');
+
+  sort.addEventListener('change', function(){
+    sortGrids(sort.value);
+  });
+
+  // Featured galleries: click a thumbnail to swap the main photo
+  document.querySelectorAll('.gallery').forEach(function(gal){
+    var main = gal.querySelector('.gallery-main');
+    var thumbs = gal.querySelectorAll('.thumb');
+    thumbs.forEach(function(th){
+      th.addEventListener('click', function(){
+        main.src = th.getAttribute('data-full');
+        thumbs.forEach(function(t){ t.classList.remove('active'); });
+        th.classList.add('active');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
