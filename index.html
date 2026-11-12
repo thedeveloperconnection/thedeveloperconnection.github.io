@@ -309,6 +309,45 @@ footer.site a{color:var(--gold); font-weight:700}
 .footer-actions{display:flex; gap:10px; flex-wrap:wrap}
 .footer-note{margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.15); font-size:13px; color:#8fa2c6}
 
+/* ---------- Lead funnel CTAs ---------- */
+.lead-band{
+  background:var(--navy-deep); color:#fff; border-radius:16px;
+  padding:30px 28px; margin:26px 0 6px; position:relative; overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.lead-band::after{
+  content:""; position:absolute; right:-70px; top:-70px; width:240px; height:240px;
+  border:36px solid rgba(224,186,66,.10); border-radius:50%;
+}
+.lead-band h2{font-size:clamp(22px,3vw,28px); font-weight:900; margin:0 0 8px; position:relative; z-index:1}
+.lead-band h2 .gold{color:var(--gold)}
+.lead-band p{color:#c6d2ea; margin:0 0 18px; max-width:640px; position:relative; z-index:1}
+.lead-steps{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:22px; position:relative; z-index:1}
+.lead-step{
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.16);
+  border-radius:10px; padding:10px 16px; font-size:14px; font-weight:600;
+}
+.lead-step b{color:var(--gold); font-family:"Archivo",sans-serif; font-weight:900; margin-right:6px}
+.btn-gold{background:var(--gold); color:var(--navy-deep); position:relative; z-index:1}
+.btn-gold:hover{background:#f0cd6a}
+.showing-cta{padding:0 0 54px}
+.showing-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:30px 32px; box-shadow:var(--shadow); text-align:center;
+}
+.showing-card h2{font-size:clamp(22px,3vw,28px); font-weight:900; margin:0 0 8px}
+.showing-card p{color:var(--ink-soft); margin:0 auto 20px; max-width:560px}
+.showing-link{
+  display:block; text-align:center; color:var(--red); font-weight:700; font-size:14.5px;
+  margin-top:12px; padding:10px 6px 2px; border-top:1px dashed var(--line);
+}
+.showing-link:hover{text-decoration:underline}
+.fbody .showing-link{margin-top:14px}
+@media (max-width: 560px){
+  .lead-band{padding:24px 20px}
+  .showing-card{padding:26px 20px}
+}
+
 @media (max-width: 900px){
   .fcard{grid-template-columns:1fr}
   .toolbar{top:0; position:static}
@@ -343,6 +382,7 @@ footer.site a{color:var(--gold); font-weight:700}
       <a href="#for-rent">For Rent</a>
       <a href="#featured">Featured</a>
       <a href="#about">About</a>
+      <a href="leads.html">Get the List</a>
     </nav>
     <a class="header-call" href="tel:+13054399410">Call 305-439-9410</a>
   </div>
@@ -358,6 +398,7 @@ footer.site a{color:var(--gold); font-weight:700}
       <div class="stat"><b>10</b><span>Featured / Off-Market</span></div>
     </div>
     <div class="hero-actions">
+      <a class="btn btn-gold" href="leads.html?source=hero">Get the Full Inventory List</a>
       <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
       <a class="btn btn-call" href="tel:+13054399410">Call 305-439-9410</a>
       <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
@@ -385,6 +426,17 @@ footer.site a{color:var(--gold); font-weight:700}
       </div>
     </div>
     <p class="result-line" id="resultLine">Showing all 36 MLS listings</p>
+  </div>
+
+  <div class="lead-band" id="get-the-list">
+    <h2>Get the Full <span class="gold">Inventory List</span></h2>
+    <p>Not sure which home fits? Answer 5 quick questions and Reynaldo will match you with the right listings — including pre-construction and off-market homes that aren't on this page yet.</p>
+    <div class="lead-steps">
+      <span class="lead-step"><b>1</b>Tell us what you're looking for</span>
+      <span class="lead-step"><b>2</b>Get matched listings</span>
+      <span class="lead-step"><b>3</b>Reynaldo calls you back</span>
+    </div>
+    <a class="btn btn-gold" href="leads.html?source=inventory-band">Get the Full Inventory List &rarr;</a>
   </div>
 
   <section class="block" id="for-sale">
@@ -2545,6 +2597,16 @@ footer.site a{color:var(--gold); font-weight:700}
   </div>
 </section>
 
+<section class="showing-cta" id="request-showing">
+  <div class="wrap">
+    <div class="showing-card">
+      <h2>Want to See a Home in Person?</h2>
+      <p>Request a showing and Reynaldo will set it up — tell him which home caught your eye and when you'd like to see it.</p>
+      <a class="btn btn-text" href="leads.html?source=showing">Request a Showing &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <footer class="site">
   <div class="wrap">
     <div class="footer-in">
@@ -2553,6 +2615,7 @@ footer.site a{color:var(--gold); font-weight:700}
         <p>Sales Director, Malibu Bay Realty &middot; The Developer Connection</p>
         <p>New construction &amp; developer inventory — Miami, Homestead, Florida City, Cutler Bay</p>
         <p>Call or text: <a href="tel:+13054399410">305-439-9410</a></p>
+        <p><a href="leads.html?source=footer">Get the full inventory list</a> &middot; <a href="leads.html?source=footer-showing">Request a showing</a></p>
         <p>Follow on Instagram: <a href="https://www.instagram.com/rey_the_realtor_/" target="_blank" rel="noopener">@rey_the_realtor_</a></p>
       </div>
       <div class="footer-actions">
@@ -2639,6 +2702,26 @@ footer.site a{color:var(--gold); font-weight:700}
         th.classList.add('active');
       });
     });
+  });
+  // "Request a showing" links: every listing card + featured card links to the
+  // lead funnel with the property pre-filled (?property=...&source=card).
+  function addShowingLink(container, addr){
+    if (!container || !addr) return;
+    var actions = container.querySelector(".card-actions");
+    if (!actions) return;
+    var a = document.createElement("a");
+    a.className = "showing-link";
+    a.href = "leads.html?property=" + encodeURIComponent(addr) + "&source=card";
+    a.textContent = "Request a showing \u2192";
+    actions.insertAdjacentElement("afterend", a);
+  }
+  document.querySelectorAll("article.card").forEach(function(card){
+    var addrEl = card.querySelector(".addr");
+    addShowingLink(card, addrEl ? addrEl.textContent.trim() : "");
+  });
+  document.querySelectorAll(".fcard").forEach(function(fc){
+    var addrEl = fc.querySelector(".faddr") || fc.querySelector("h3");
+    addShowingLink(fc, addrEl ? addrEl.textContent.trim() : "");
   });
 })();
 </script>
