@@ -364,6 +364,152 @@ footer.site a{color:var(--gold); font-weight:700}
   html{scroll-behavior:auto}
   .btn{transition:none}
 }
+
+/* ---------- Embedded lead form (from leads.html, scoped) ---------- */
+#leadFormSection h1, #leadFormSection h2, #leadFormSection h3, #leadFormSection .brand-name {font-family:"Archivo", "Public Sans", sans-serif}
+#leadFormSection .wrap {max-width:640px; margin:0 auto; padding:0 16px}
+#leadFormSection .brand-mark {
+  width:40px; height:40px; flex:0 0 40px; border-radius:8px;
+  background:var(--red); color:#fff; display:grid; place-items:center;
+  font-family:"Archivo",sans-serif; font-weight:900; font-size:16px;
+  border:2px solid var(--gold);
+}
+#leadFormSection .brand-name {font-weight:800; font-size:16px; letter-spacing:.05em; line-height:1.1; text-transform:uppercase}
+#leadFormSection .brand-sub {font-size:11.5px; color:var(--gold); font-weight:600; letter-spacing:.14em; text-transform:uppercase}
+#leadFormSection .prop-banner {
+  display:none; background:var(--gold); color:var(--navy-deep);
+  font-weight:700; font-size:15px; text-align:center;
+  padding:12px 16px; border-radius:12px; margin:0 0 20px;
+}
+#leadFormSection .prop-banner.show {display:block}
+#leadFormSection .lf-card {
+  background:var(--surface); border:1px solid var(--line); border-radius:16px;
+  box-shadow:var(--shadow); padding:28px 22px; margin:-32px auto 28px; position:relative; z-index:2;
+}
+#leadFormSection .card-intro {margin:0 0 24px; font-size:15.5px; color:var(--ink-soft)}
+#leadFormSection .card-intro b {color:var(--ink)}
+#leadFormSection .q {margin-bottom:28px}
+#leadFormSection .q-head {display:flex; align-items:flex-start; gap:10px; margin-bottom:12px}
+#leadFormSection .q-num {
+  flex:0 0 28px; width:28px; height:28px; border-radius:50%;
+  background:var(--navy); color:var(--gold); display:grid; place-items:center;
+  font-family:"Archivo",sans-serif; font-weight:900; font-size:15px; margin-top:1px;
+}
+#leadFormSection .q-title {font-family:"Archivo",sans-serif; font-size:18px; font-weight:800; line-height:1.25; margin:0}
+#leadFormSection .q-hint {font-size:13.5px; color:var(--ink-soft); margin:4px 0 0; font-weight:500}
+#leadFormSection .field {margin-bottom:14px}
+#leadFormSection .field:last-child {margin-bottom:0}
+#leadFormSection .field label {display:block; font-weight:700; font-size:14.5px; margin-bottom:6px}
+#leadFormSection .field label .req {color:var(--red)}
+#leadFormSection .field label .opt-tag {color:var(--ink-soft); font-weight:500; font-size:13px}
+#leadFormSection .field input[type="text"], #leadFormSection .field input[type="email"], #leadFormSection .field input[type="tel"] {
+  width:100%; font:inherit; font-size:16px; padding:14px 14px; border-radius:10px;
+  border:1.5px solid var(--line); background:var(--surface-2); color:var(--ink);
+}
+#leadFormSection .field input:focus {outline:none; border-color:var(--navy); box-shadow:0 0 0 3px rgba(18,38,84,.15)}
+#leadFormSection .money-wrap {position:relative}
+#leadFormSection .money-wrap::before {
+  content:"$"; position:absolute; left:14px; top:50%; transform:translateY(-50%);
+  font-weight:700; color:var(--ink-soft); font-size:16px;
+}
+#leadFormSection .money-wrap input {padding-left:30px !important}
+#leadFormSection .opts {display:grid; gap:10px}
+#leadFormSection .opts.two-col {grid-template-columns:1fr 1fr}
+#leadFormSection .opt {position:relative}
+#leadFormSection .opt input {position:absolute; opacity:0; width:1px; height:1px}
+#leadFormSection .opt span {
+  display:flex; align-items:center; gap:10px; min-height:52px;
+  padding:13px 16px; border:1.5px solid var(--line); border-radius:12px;
+  background:var(--surface-2); font-weight:600; font-size:15.5px; cursor:pointer;
+  transition:border-color .15s ease, background .15s ease;
+}
+#leadFormSection .opt span::before {
+  content:""; flex:0 0 20px; width:20px; height:20px; border-radius:6px;
+  border:2px solid var(--line); background:#fff;
+}
+#leadFormSection .opt.radio span::before {border-radius:50%}
+#leadFormSection .opt input:checked + span, #leadFormSection .opt.checked span {
+  border-color:var(--navy); background:#e8edf7;
+}
+#leadFormSection .opt input:checked + span::before, #leadFormSection .opt.checked span::before {
+  border-color:var(--navy); background:var(--navy);
+  box-shadow:inset 0 0 0 4px #fff;
+}
+#leadFormSection .opt input:focus-visible + span {outline:3px solid rgba(224,186,66,.8); outline-offset:2px}
+#leadFormSection .opt.yes input:checked + span, #leadFormSection .opt.yes.checked span {border-color:var(--wa); background:#e6f7ec}
+#leadFormSection .opt.yes input:checked + span::before, #leadFormSection .opt.yes.checked span::before {border-color:var(--wa); background:var(--wa)}
+#leadFormSection .opt.no input:checked + span, #leadFormSection .opt.no.checked span {border-color:var(--ink-soft); background:#eef1f6}
+#leadFormSection .opt.no input:checked + span::before, #leadFormSection .opt.no.checked span::before {border-color:var(--ink-soft); background:var(--ink-soft)}
+#leadFormSection .hp {position:absolute !important; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0}
+#leadFormSection .form-error {
+  display:none; background:#fdecec; border:1.5px solid var(--red); color:#7a1218;
+  border-radius:10px; padding:13px 16px; font-size:14.5px; font-weight:600; margin-bottom:16px;
+}
+#leadFormSection .form-error.show {display:block}
+#leadFormSection .btn-submit {
+  display:block; width:100%; border:none; cursor:pointer;
+  background:var(--gold); color:var(--navy-deep);
+  font-family:"Archivo",sans-serif; font-weight:900; font-size:18px;
+  padding:17px 20px; border-radius:12px; letter-spacing:.01em;
+}
+#leadFormSection .btn-submit:hover {filter:brightness(1.05)}
+#leadFormSection .btn-submit:active {transform:scale(.99)}
+#leadFormSection .btn-submit:disabled {opacity:.6; cursor:wait}
+#leadFormSection .fine {font-size:13px; color:var(--ink-soft); text-align:center; margin:14px 0 0}
+#leadFormSection .divider {display:flex; align-items:center; gap:12px; margin:26px 0 16px; color:var(--ink-soft); font-size:13.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase}
+#leadFormSection .divider::before, #leadFormSection .divider::after {content:""; flex:1; height:1px; background:var(--line)}
+#leadFormSection .alt-actions {display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px}
+#leadFormSection .btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-weight:700; font-size:14.5px; padding:13px 8px; border-radius:10px; color:#fff; border:none; cursor:pointer;
+  transition:filter .15s ease;
+}
+#leadFormSection .btn:hover {filter:brightness(1.1)}
+#leadFormSection .btn-wa {background:var(--wa)}
+#leadFormSection .btn-call {background:var(--navy)}
+#leadFormSection .btn-text {background:var(--red)}
+#leadFormSection .panel {display:none; text-align:center; padding:12px 4px 4px}
+#leadFormSection .panel.show {display:block}
+#leadFormSection .panel .big-check {
+  width:76px; height:76px; margin:0 auto 18px; border-radius:50%;
+  background:var(--wa); color:#fff; display:grid; place-items:center;
+  font-size:40px; font-weight:900;
+}
+#leadFormSection .panel .big-x {
+  width:76px; height:76px; margin:0 auto 18px; border-radius:50%;
+  background:var(--red); color:#fff; display:grid; place-items:center;
+  font-size:36px; font-weight:900;
+}
+#leadFormSection .panel h2 {font-size:26px; font-weight:900; margin:0 0 10px}
+#leadFormSection .panel p {color:var(--ink-soft); font-size:16px; margin:0 auto 20px; max-width:440px}
+#leadFormSection .panel p b {color:var(--ink)}
+#leadFormSection .panel .btn {padding:14px 22px; font-size:15.5px}
+#leadFormSection .panel-actions {display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
+#leadFormSection .link-row {margin-top:20px; font-size:14.5px}
+#leadFormSection .link-row a {color:var(--red); font-weight:700}
+#leadFormSection .link-row a:hover {text-decoration:underline}
+@media (max-width: 480px) {
+#leadFormSection .opts.two-col {grid-template-columns:1fr 1fr}
+#leadFormSection .alt-actions {grid-template-columns:1fr}
+#leadFormSection .lf-card {padding:24px 18px}
+}
+@media (prefers-reduced-motion: reduce) {
+#leadFormSection .btn {transition:none}
+}
+
+/* ---------- Embedded lead form: section + heading ---------- */
+#leadFormSection{background:var(--navy-deep); border-radius:16px; padding:40px 0 36px; margin:26px 0 6px; position:relative; overflow:hidden; box-shadow:var(--shadow); scroll-margin-top:90px}
+#leadFormSection::after{content:""; position:absolute; right:-70px; top:-70px; width:240px; height:240px; border:36px solid rgba(224,186,66,.10); border-radius:50%}
+#leadFormSection .lf-heading{text-align:center; color:#fff; max-width:640px; margin:0 auto 26px; padding:0 16px; position:relative; z-index:1}
+#leadFormSection .lf-heading h2{font-family:"Archivo","Public Sans",sans-serif; font-size:clamp(24px,3.4vw,30px); font-weight:900; line-height:1.15; margin:0 0 10px}
+#leadFormSection .lf-heading h2 .gold{color:var(--gold)}
+#leadFormSection .lf-heading p{color:#c6d2ea; margin:0; font-size:16px}
+#leadFormSection .wrap{position:relative; z-index:1}
+#leadFormSection .lf-card{margin:0 auto 8px}
+@media (max-width: 560px){
+  #leadFormSection{padding:32px 0 28px}
+}
+
 </style>
 </head>
 <body>
@@ -382,7 +528,7 @@ footer.site a{color:var(--gold); font-weight:700}
       <a href="#for-rent">For Rent</a>
       <a href="#featured">Featured</a>
       <a href="#about">About</a>
-      <a href="leads.html">Get the List</a>
+      <a href="#leadFormSection">Get the List</a>
     </nav>
     <a class="header-call" href="tel:+13054399410">Call 305-439-9410</a>
   </div>
@@ -398,7 +544,7 @@ footer.site a{color:var(--gold); font-weight:700}
       <div class="stat"><b>10</b><span>Featured / Off-Market</span></div>
     </div>
     <div class="hero-actions">
-      <a class="btn btn-gold" href="leads.html?source=hero">Get the Full Inventory List</a>
+      <a class="btn btn-gold" href="#leadFormSection">Get the Full Inventory List</a>
       <a class="btn btn-text" href="sms:+13054399410">Text Reynaldo</a>
       <a class="btn btn-call" href="tel:+13054399410">Call 305-439-9410</a>
       <a class="btn btn-wa" href="https://wa.me/13054399410" target="_blank" rel="noopener">WhatsApp</a>
@@ -428,16 +574,153 @@ footer.site a{color:var(--gold); font-weight:700}
     <p class="result-line" id="resultLine">Showing all 36 MLS listings</p>
   </div>
 
-  <div class="lead-band" id="get-the-list">
-    <h2>Get the Full <span class="gold">Inventory List</span></h2>
-    <p>Not sure which home fits? Answer 5 quick questions and Reynaldo will match you with the right listings — including pre-construction and off-market homes that aren't on this page yet.</p>
-    <div class="lead-steps">
-      <span class="lead-step"><b>1</b>Tell us what you're looking for</span>
-      <span class="lead-step"><b>2</b>Get matched listings</span>
-      <span class="lead-step"><b>3</b>Reynaldo calls you back</span>
-    </div>
-    <a class="btn btn-gold" href="leads.html?source=inventory-band">Get the Full Inventory List &rarr;</a>
+<section id="leadFormSection" aria-label="Find your home">
+  <div class="lf-heading">
+    <h2>Find Your New Home in <span class="gold">South Florida</span></h2>
+    <p>Answer 5 quick questions and Reynaldo will match you with new construction, pre-construction, and resale homes across Miami, Homestead, Florida City, and Cutler Bay — including off-market homes that aren't on this page yet.</p>
   </div>
+  <div class="wrap">
+<div class="lf-card" id="leadCard">
+
+    <div class="prop-banner" id="propBanner" role="status"></div>
+
+    <form id="leadForm" novalidate>
+      <p class="card-intro">Takes about a minute. Your answers go <b>straight to Reynaldo</b> — no spam, no sharing your info with anyone else.</p>
+
+      <!-- Q1: Contact -->
+      <div class="q">
+        <div class="q-head">
+          <span class="q-num">1</span>
+          <div>
+            <h2 class="q-title">How can Reynaldo reach you?</h2>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fName">Full name <span class="req">*</span></label>
+          <input type="text" id="fName" name="name" autocomplete="name" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label for="fEmail">Email address <span class="req">*</span></label>
+          <input type="email" id="fEmail" name="email" autocomplete="email" placeholder="you@email.com" required>
+        </div>
+        <div class="field">
+          <label for="fPhone">Phone number <span class="opt-tag" id="phoneTag">(optional — required if you'd like a call back)</span></label>
+          <input type="tel" id="fPhone" name="phone" autocomplete="tel" placeholder="(305) 555-1234">
+        </div>
+      </div>
+
+      <!-- Q2: Property type (multi) -->
+      <div class="q">
+        <div class="q-head">
+          <span class="q-num">2</span>
+          <div>
+            <h2 class="q-title">What are you looking for?</h2>
+            <p class="q-hint">Pick all that apply. <span class="req" style="color:var(--red); font-weight:700">*</span></p>
+          </div>
+        </div>
+        <div class="opts" id="typeOpts">
+          <label class="opt"><input type="checkbox" name="looking_for" value="Townhouse"><span>Townhouse</span></label>
+          <label class="opt"><input type="checkbox" name="looking_for" value="Condo"><span>Condo</span></label>
+          <label class="opt"><input type="checkbox" name="looking_for" value="Single Family Home"><span>Single Family Home</span></label>
+          <label class="opt"><input type="checkbox" name="looking_for" value="New Construction"><span>New Construction</span></label>
+          <label class="opt"><input type="checkbox" name="looking_for" value="Pre-Construction"><span>Pre-Construction</span></label>
+          <label class="opt"><input type="checkbox" name="looking_for" value="Resale"><span>Resale</span></label>
+        </div>
+      </div>
+
+      <!-- Q3: Price point (single) -->
+      <div class="q">
+        <div class="q-head">
+          <span class="q-num">3</span>
+          <div>
+            <h2 class="q-title">What price point are you looking for?</h2>
+          </div>
+        </div>
+        <div class="opts" id="priceOpts">
+          <label class="opt radio"><input type="radio" name="price_point" value="$300,000–$500,000"><span>$300,000 – $500,000</span></label>
+          <label class="opt radio"><input type="radio" name="price_point" value="$500,000–$700,000"><span>$500,000 – $700,000</span></label>
+          <label class="opt radio"><input type="radio" name="price_point" value="$700,000–$900,000"><span>$700,000 – $900,000</span></label>
+          <label class="opt radio"><input type="radio" name="price_point" value="$900,000–$1,000,000"><span>$900,000 – $1,000,000</span></label>
+          <label class="opt radio"><input type="radio" name="price_point" value="$1,000,000 and up"><span>$1,000,000 and up</span></label>
+        </div>
+      </div>
+
+      <!-- Q4: Monthly payment -->
+      <div class="q">
+        <div class="q-head">
+          <span class="q-num">4</span>
+          <div>
+            <h2 class="q-title">What is your desired monthly mortgage payment?</h2>
+            <p class="q-hint">Your best guess is fine — leave it blank if you're not sure yet.</p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fPayment">Monthly payment <span class="opt-tag">(optional)</span></label>
+          <div class="money-wrap">
+            <input type="text" id="fPayment" name="monthly_payment" inputmode="decimal" placeholder="e.g. 3,000" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5: Callback -->
+      <div class="q">
+        <div class="q-head">
+          <span class="q-num">5</span>
+          <div>
+            <h2 class="q-title">Would you like a call back from Rey at The Developer Connection for more information?</h2>
+          </div>
+        </div>
+        <div class="opts two-col" id="cbOpts">
+          <label class="opt radio yes"><input type="radio" name="callback" value="Yes"><span>Yes, call me</span></label>
+          <label class="opt radio no"><input type="radio" name="callback" value="No"><span>No, thanks</span></label>
+        </div>
+      </div>
+
+      <!-- Honeypot (bots fill it; humans never see it) -->
+      <div class="hp" aria-hidden="true">
+        <label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div class="form-error" id="formError" role="alert"></div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">Send My Info &rarr;</button>
+      <p class="fine">Your info goes straight to Reynaldo Gonzalez, Sales Director at Malibu Bay Realty. No spam, ever.</p>
+
+      <div class="divider">or reach Reynaldo directly</div>
+      <div class="alt-actions">
+        <button type="button" class="btn btn-wa" id="waBtn">WhatsApp</button>
+        <a class="btn btn-call" href="tel:+13054399410">Call</a>
+        <a class="btn btn-text" href="sms:+13054399410">Text</a>
+      </div>
+    </form>
+
+    <!-- Thank-you state -->
+    <div class="panel" id="thanksPanel" role="status">
+      <div class="big-check">&#10003;</div>
+      <h2 id="thanksTitle">Thanks!</h2>
+      <p>Your info is on its way to <b>Reynaldo at The Developer Connection</b>. He'll be in touch soon with homes that match what you're looking for.</p>
+      <div class="panel-actions">
+        <button type="button" class="btn btn-wa" id="thanksWaBtn">Message Reynaldo on WhatsApp</button>
+        <a class="btn btn-call" href="#for-sale">Browse the inventory</a>
+      </div>
+      <p class="link-row"><a href="#" id="againLink">Submit another response</a></p>
+    </div>
+
+    <!-- Error state -->
+    <div class="panel" id="errorPanel" role="alert">
+      <div class="big-x">&#10005;</div>
+      <h2>That didn't go through</h2>
+      <p>The form couldn't send just now — but your answers are still here. Send them to Reynaldo another way:</p>
+      <div class="panel-actions">
+        <button type="button" class="btn btn-wa" id="errorWaBtn">Send via WhatsApp</button>
+        <button type="button" class="btn btn-call" id="errorEmailBtn">Send via Email</button>
+      </div>
+      <p class="link-row"><a href="#" id="retryLink">Try sending the form again</a></p>
+    </div>
+
+  </div>
+  </div>
+</section>
 
   <section class="block" id="for-sale">
     <div class="section-head">
@@ -2602,7 +2885,7 @@ footer.site a{color:var(--gold); font-weight:700}
     <div class="showing-card">
       <h2>Want to See a Home in Person?</h2>
       <p>Request a showing and Reynaldo will set it up — tell him which home caught your eye and when you'd like to see it.</p>
-      <a class="btn btn-text" href="leads.html?source=showing">Request a Showing &rarr;</a>
+      <a class="btn btn-text" href="#leadFormSection">Request a Showing &rarr;</a>
     </div>
   </div>
 </section>
@@ -2615,7 +2898,7 @@ footer.site a{color:var(--gold); font-weight:700}
         <p>Sales Director, Malibu Bay Realty &middot; The Developer Connection</p>
         <p>New construction &amp; developer inventory — Miami, Homestead, Florida City, Cutler Bay</p>
         <p>Call or text: <a href="tel:+13054399410">305-439-9410</a></p>
-        <p><a href="leads.html?source=footer">Get the full inventory list</a> &middot; <a href="leads.html?source=footer-showing">Request a showing</a></p>
+        <p><a href="#leadFormSection">Get the full inventory list</a> &middot; <a href="#leadFormSection">Request a showing</a></p>
         <p>Follow on Instagram: <a href="https://www.instagram.com/rey_the_realtor_/" target="_blank" rel="noopener">@rey_the_realtor_</a></p>
       </div>
       <div class="footer-actions">
@@ -2724,6 +3007,227 @@ footer.site a{color:var(--gold); font-weight:700}
     addShowingLink(fc, addrEl ? addrEl.textContent.trim() : "");
   });
 })();
+</script>
+<script>
+
+(function(){
+  "use strict";
+
+  /* ---- Lead destination (kept out of the page source as one literal) ---- */
+  var EM = ["Reythedeveloperconnection", "@", "gmail.com"].join("");
+  var ENDPOINT = "https://formsubmit.co/ajax/" + EM;
+  var PHONE = "13054399410";
+
+  /* ---- Query params: ?property=... (from a listing card) & ?source=... ---- */
+  var params = new URLSearchParams(window.location.search);
+  var property = (params.get("property") || "").trim();
+  var source = (params.get("source") || "").trim();
+
+  var form = document.getElementById("leadForm");
+  var thanksPanel = document.getElementById("thanksPanel");
+  var errorPanel = document.getElementById("errorPanel");
+  var formError = document.getElementById("formError");
+  var submitBtn = document.getElementById("submitBtn");
+  var phoneTag = document.getElementById("phoneTag");
+  var propBanner = document.getElementById("propBanner");
+
+  if (property) {
+    propBanner.textContent = "Showing request: " + property;
+    propBanner.classList.add("show");
+  }
+
+  /* ---- Option-card checked styling (belt & braces beside :has/:checked CSS) ---- */
+  document.querySelectorAll(".opt input").forEach(function(input){
+    input.addEventListener("change", function(){
+      if (input.type === "radio") {
+        document.querySelectorAll('input[name="' + input.name + '"]').forEach(function(r){
+          r.closest(".opt").classList.toggle("checked", r.checked);
+        });
+      } else {
+        input.closest(".opt").classList.toggle("checked", input.checked);
+      }
+      if (input.name === "callback") updatePhoneRequirement();
+    });
+  });
+
+  function wantsCallback(){
+    var cb = form.querySelector('input[name="callback"]:checked');
+    return cb && cb.value === "Yes";
+  }
+  function updatePhoneRequirement(){
+    var phone = document.getElementById("fPhone");
+    if (wantsCallback()) {
+      phone.setAttribute("required", "required");
+      phoneTag.textContent = "(required so Reynaldo can call you back)";
+    } else {
+      phone.removeAttribute("required");
+      phoneTag.textContent = "(optional \u2014 required if you'd like a call back)";
+    }
+  }
+
+  function checkedValues(name){
+    var out = [];
+    form.querySelectorAll('input[name="' + name + '"]:checked').forEach(function(el){ out.push(el.value); });
+    return out;
+  }
+  function checkedValue(name){
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : "";
+  }
+
+  function values(){
+    return {
+      name: document.getElementById("fName").value.trim(),
+      email: document.getElementById("fEmail").value.trim(),
+      phone: document.getElementById("fPhone").value.trim(),
+      lookingFor: checkedValues("looking_for"),
+      pricePoint: checkedValue("price_point"),
+      payment: document.getElementById("fPayment").value.trim(),
+      callback: checkedValue("callback")
+    };
+  }
+
+  function showError(msg){
+    formError.textContent = msg;
+    formError.classList.add("show");
+    formError.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  function clearError(){
+    formError.textContent = "";
+    formError.classList.remove("show");
+  }
+
+  function validate(v){
+    var missing = [];
+    if (!v.name) missing.push("your name");
+    if (!v.email) missing.push("your email address");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) missing.push("a valid email address");
+    if (v.callback === "Yes" && !v.phone) missing.push("your phone number (needed for the call back)");
+    if (!v.lookingFor.length) missing.push("at least one property type in question 2");
+    if (!v.pricePoint) missing.push("a price point in question 3");
+    if (!v.callback) missing.push("an answer to question 5 (call back yes or no)");
+    return missing;
+  }
+
+  function buildMessage(v){
+    var lines = ["Hi Reynaldo! I just filled out the form on the Developer Connection site."];
+    if (property) lines.push("Property I'm interested in: " + property);
+    lines.push("Name: " + v.name);
+    lines.push("Email: " + v.email);
+    if (v.phone) lines.push("Phone: " + v.phone);
+    if (v.lookingFor.length) lines.push("Looking for: " + v.lookingFor.join(", "));
+    if (v.pricePoint) lines.push("Price point: " + v.pricePoint);
+    if (v.payment) lines.push("Desired monthly payment: $" + v.payment);
+    if (v.callback) lines.push("Wants a call back: " + v.callback);
+    return lines.join("\n");
+  }
+
+  function openWhatsApp(){
+    var v = values();
+    var url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(buildMessage(v));
+    window.open(url, "_blank", "noopener");
+  }
+  function openEmail(){
+    var v = values();
+    var subject = "New lead from the Developer Connection website" + (property ? " — " + property : "");
+    var url = "mailto:" + EM + "?subject=" + encodeURIComponent(subject)
+      + "&body=" + encodeURIComponent(buildMessage(v));
+    window.location.href = url;
+  }
+
+  document.getElementById("waBtn").addEventListener("click", openWhatsApp);
+  document.getElementById("thanksWaBtn").addEventListener("click", openWhatsApp);
+  document.getElementById("errorWaBtn").addEventListener("click", openWhatsApp);
+  document.getElementById("errorEmailBtn").addEventListener("click", openEmail);
+
+  document.getElementById("againLink").addEventListener("click", function(e){
+    e.preventDefault();
+    form.reset();
+    document.querySelectorAll(".opt.checked").forEach(function(o){ o.classList.remove("checked"); });
+    updatePhoneRequirement();
+    thanksPanel.classList.remove("show");
+    form.style.display = "";
+    document.getElementById("leadFormSection").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  document.getElementById("retryLink").addEventListener("click", function(e){
+    e.preventDefault();
+    errorPanel.classList.remove("show");
+    form.style.display = "";
+  });
+
+  function showThanks(v){
+    var first = v.name.split(/\s+/)[0];
+    document.getElementById("thanksTitle").textContent = first ? "Thanks, " + first + "!" : "Thanks!";
+    form.style.display = "none";
+    errorPanel.classList.remove("show");
+    thanksPanel.classList.add("show");
+    document.getElementById("leadCard").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function showFailure(){
+    form.style.display = "none";
+    thanksPanel.classList.remove("show");
+    errorPanel.classList.add("show");
+    document.getElementById("leadCard").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    clearError();
+
+    /* Honeypot: bots fill it — quietly "succeed" without sending anything. */
+    if (form.querySelector('input[name="_honey"]').value) { showThanks(values()); return; }
+
+    var v = values();
+    var missing = validate(v);
+    if (missing.length) {
+      showError("Almost there — please add " + missing.join(", ") + ".");
+      return;
+    }
+
+    var payload = {
+      "Name": v.name,
+      "Email": v.email,
+      "Phone": v.phone || "(not provided)",
+      "Looking for": v.lookingFor.join(", "),
+      "Price point": v.pricePoint,
+      "Desired monthly payment": v.payment ? "$" + v.payment : "(not provided)",
+      "Wants a call back": v.callback,
+      "Property of interest": property || "(none — general inquiry)",
+      "Source": source || "index-embedded",
+      "_subject": "New lead — " + v.name + " (" + v.lookingFor.join(", ") + ", " + v.pricePoint + ")",
+      "_template": "table",
+      "_honey": ""
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(payload)
+    })
+    .then(function(res){ return res.json().catch(function(){ return {}; }); })
+    .then(function(data){
+      /* FormSubmit holds first-ever submissions until the inbox owner clicks
+         the one-time activation link, then delivers them — so an "Activation"
+         reply still means the lead is captured. Anything else without success
+         is a real failure: show the WhatsApp / email fallbacks. */
+      if (data && (data.success === "true" || data.success === true ||
+          (typeof data.message === "string" && /activat/i.test(data.message)))) {
+        showThanks(v);
+      } else {
+        showFailure();
+      }
+    })
+    .catch(function(){ showFailure(); })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send My Info \u2192";
+    });
+  });
+})();
+
 </script>
 </body>
 </html>
